@@ -14,14 +14,21 @@
     <inherits name="com.google.gwt.user.User" />
 
     <!-- GWTP -->
-    <inherits name="com.gwtplatform.dispatch.Dispatch" />
     <inherits name="com.gwtplatform.mvp.Mvp" />
 
+    <!-- Other -->
+    <inherits name="biz.accelsis.techtalk.geotracker.FormFactor" />
+
     <entry-point class="biz.accelsis.waitara.client.Waitara" />
-    <source path="client">
-        <exclude name="gwttest" />
-        <exclude name="**/*Test.java" />
-    </source>
+
+    <!-- Device dependent settings
+    <replace-with class="biz.accelsis.techtalk.geotracker.client.ApplicationViewDesktop">
+        <when-type-is class="biz.accelsis.techtalk.geotracker.client.ApplicationView" />
+    </replace-with>
+    <replace-with class="biz.accelsis.techtalk.geotracker.client.ApplicationViewMobile">
+        <when-type-is class="biz.accelsis.techtalk.geotracker.client.ApplicationView" />
+        <when-property-is name="formfactor" value="mobile" />
+    </replace-with> -->
 
     <!-- Logging -->
     <set-property name="gwt.logging.logLevel" value="FINE" />
@@ -33,6 +40,7 @@
     <set-property name="gwt.logging.simpleRemoteHandler" value="DISABLED" />
     <set-property name="gwt.logging.popupHandler" value="DISABLED" />
 
+    <!-- Gin -->
     <define-configuration-property name="gin.ginjector" is-multi-valued="false" />
     <set-configuration-property name="gin.ginjector" value="biz.accelsis.waitara.client.gin.WaitaraGinjector" />
 
