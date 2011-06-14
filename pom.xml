@@ -31,12 +31,6 @@
             <url>svn:https://waitara.googlecode.com/svn/site</url>
         </site>
     </distributionManagement>
-    <repositories>
-        <repository>
-            <id>waitara</id>
-            <url>http://waitara.googlecode.com/svn/repository</url>
-        </repository>
-    </repositories>
 
 
     <properties>
