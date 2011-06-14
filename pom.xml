@@ -4,7 +4,7 @@
 
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>name.pehl</groupId>
+    <groupId>biz.accelsis</groupId>
     <artifactId>waitara</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
@@ -12,7 +12,7 @@
     <description>Task Management</description>
     <url>http://code.google.com/p/waitara/</url>
 
-    
+
     <scm>
         <connection>scm:svn:http://waitara.googlecode.com/svn/trunk</connection>
         <developerConnection>scm:svn:https://waitara.googlecode.com/svn/trunk</developerConnection>
@@ -22,12 +22,12 @@
     <distributionManagement>
         <repository>
             <id>waitara-repo</id>
-            <name>Tire Repository</name>
+            <name>Waitara  Repository</name>
             <url>svn:https://waitara.googlecode.com/svn/repository</url>
         </repository>
         <site>
             <id>waitara-site</id>
-            <name>Tire Site</name>
+            <name>Waitara Site</name>
             <url>svn:https://waitara.googlecode.com/svn/site</url>
         </site>
     </distributionManagement>
@@ -41,8 +41,8 @@
         <gae.plugin.version>0.8.4</gae.plugin.version>
         <gwt.version>2.3.0</gwt.version>
         <gwt.plugin.version>2.3.0</gwt.plugin.version>
-        
-        
+
+
         <!-- GWT Frameworks -->
         <gwtp.version>0.6</gwtp.version>
 
@@ -109,47 +109,11 @@
         <!-- GWT Frameworks -->
         <dependency>
             <groupId>com.gwtplatform</groupId>
-            <artifactId>gwtp</artifactId>
+            <artifactId>gwtp-all</artifactId>
             <version>${gwtp.version}</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>com.gwtplatform</groupId>
-            <artifactId>gwtp-clients-common</artifactId>
-            <version>${gwtp.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.gwtplatform</groupId>
-            <artifactId>gwtp-mvp-client</artifactId>
-            <version>${gwtp.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.gwtplatform</groupId>
-            <artifactId>gwtp-dispatch-client</artifactId>
-            <version>${gwtp.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.gwtplatform</groupId>
-            <artifactId>gwtp-processors</artifactId>
-            <version>${gwtp.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.gwtplatform</groupId>
-            <artifactId>gwtp-crawler</artifactId>
-            <version>${gwtp.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.gwtplatform</groupId>
-            <artifactId>gwtp-tester</artifactId>
-            <version>${gwtp.version}</version>
-            <scope>test</scope>
-        </dependency>
-        
+
         <!-- DI -->
         <dependency>
             <groupId>com.google.inject</groupId>
@@ -242,7 +206,7 @@
         </dependency>
     </dependencies>
 
-    
+
     <build>
         <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
         <plugins>
@@ -269,7 +233,6 @@
                         <configuration>
                             <sources>
                                 <source>${project.build.directory}/generated-sources/apt</source>
-                                <source>${project.build.directory}/generated-sources/gwt</source>
                             </sources>
                         </configuration>
                     </execution>
@@ -325,7 +288,7 @@
                     <port>8888</port>
                     <runTarget>/index.html</runTarget>
                     <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
-                    <module>name.pehl.waitara.Waitara</module>
+                    <module>biz.accelsis.waitara.Waitara</module>
                     <gwtVersion>${gwt.version}</gwtVersion>
                 </configuration>
                 <executions>
@@ -362,13 +325,25 @@
                         <projectnature>com.google.gwt.eclipse.core.gwtNature</projectnature>
                         <projectnature>com.google.appengine.eclipse.core.gaeNature</projectnature>
                     </additionalProjectnatures>
-                    <!-- Unfortunatley this does not work, when configured by maven. The workaround is to generate the eclipe 
-                        project settings without it and do it manually :-( <additionalConfig> <file> <name>.factorypath</name> <content><![CDATA[ 
-                        <factorypath> <factorypathentry kind="PLUGIN" id="org.eclipse.jst.ws.annotations.core" enabled="true" runInBatchMode="false"/> 
-                        <factorypathentry kind="VARJAR" id="M2_REPO/com/gwtplatform/gwtp/0.6/gwtp-0.6.jar" enabled="true" runInBatchMode="false"/> 
-                        </factorypath> ]]></content> </file> <file> <name>.settings/org.eclipse.jdt.apt.core.prefs</name> <content><![CDATA[ eclipse.preferences.version=1 
-                        org.eclipse.jdt.apt.aptEnabled=true org.eclipse.jdt.apt.genSrcDir=target/generated-sources/apt org.eclipse.jdt.apt.reconcileEnabled=true 
-                        ]]></content> </file> </additionalConfig> -->
+                    <additionalConfig>
+                        <file>
+                            <name>.factorypath</name>
+                            <content><![CDATA[ 
+<factorypath>
+    <factorypathentry kind="PLUGIN" id="org.eclipse.jst.ws.annotations.core" enabled="true" runInBatchMode="false"/> 
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/gwtplatform/gwtp/0.6/gwtp-all-0.6.jar" enabled="true" runInBatchMode="false"/> 
+</factorypath>]]>
+                            </content>
+                        </file>
+                        <file>
+                            <name>.settings/org.eclipse.jdt.apt.core.prefs</name>
+                            <content><![CDATA[ 
+eclipse.preferences.version=1 
+org.eclipse.jdt.apt.aptEnabled=true org.eclipse.jdt.apt.genSrcDir=target/generated-sources/apt 
+org.eclipse.jdt.apt.reconcileEnabled=true]]>
+                            </content>
+                        </file>
+                    </additionalConfig>
                     <excludes>
                         <exclude>com.google.gwt:gwt-dev</exclude>
                         <exclude>com.google.gwt:gwt-user</exclude>

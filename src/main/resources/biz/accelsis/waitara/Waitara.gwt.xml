@@ -17,7 +17,7 @@
     <inherits name="com.gwtplatform.dispatch.Dispatch" />
     <inherits name="com.gwtplatform.mvp.Mvp" />
 
-    <entry-point class="name.pehl.waitara.client.Waitara" />
+    <entry-point class="biz.accelsis.waitara.client.Waitara" />
     <source path="client">
         <exclude name="gwttest" />
         <exclude name="**/*Test.java" />
@@ -32,5 +32,8 @@
     <set-property name="gwt.logging.systemHandler" value="ENABLED" />
     <set-property name="gwt.logging.simpleRemoteHandler" value="DISABLED" />
     <set-property name="gwt.logging.popupHandler" value="DISABLED" />
+
+    <define-configuration-property name="gin.ginjector" is-multi-valued="false" />
+    <set-configuration-property name="gin.ginjector" value="biz.accelsis.waitara.client.gin.WaitaraGinjector" />
 
 </module>

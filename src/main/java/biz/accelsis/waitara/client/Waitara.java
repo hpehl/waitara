@@ -1,4 +1,4 @@
-package name.pehl.tire.client;
+package biz.accelsis.waitara.client;
 
 import com.google.gwt.core.client.EntryPoint;
 
