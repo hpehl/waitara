@@ -1,6 +1,5 @@
 package biz.accelsis.waitara.client.application;
 
-
 import biz.accelsis.waitara.client.resources.Resources;
 import biz.accelsis.waitara.client.ui.UiUtils;
 
@@ -41,8 +40,7 @@ public class ApplicationView extends ViewImpl implements ApplicationPresenter.My
     {
         // Inject the global CSS resources
         this.resources = resources;
-        this.resources.waitara().ensureInjected();
-        this.resources.widgets().ensureInjected();
+        this.resources.desktop().ensureInjected();
         this.widget = uiBinder.createAndBindUi(this);
     }
 

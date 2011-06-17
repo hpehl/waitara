@@ -8,25 +8,33 @@ import com.google.gwt.resources.client.CssResource;
  * @version $Date: 2010-12-22 16:43:49 +0100 (Mi, 22 Dez 2010) $ $Revision: 157
  *          $
  */
-// @formatter:off
 public interface Resources extends ClientBundle
 {
     // -------------------------------------------------------------------- CSS
-    
+
     /**
-     * Global CSS rules
+     * Global CSS rules for desktop version
      * 
      * @return
      */
-    @Source("waitara.css")
-    CssResource waitara();
+    @Source("desktop.css")
+    CssResource desktop();
 
 
     /**
-     * CSS classes to style GWT and custom widgets
+     * Global CSS rules for tablet version
      * 
      * @return
      */
-    @Source("widgets.css")
-    CssResource widgets();
+    @Source("tablet.css")
+    CssResource tablet();
+
+
+    /**
+     * Global CSS rules for smartphone version
+     * 
+     * @return
+     */
+    @Source("smartphone.css")
+    CssResource smartphone();
 }
