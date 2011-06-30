@@ -15,9 +15,18 @@ public class Task
     private boolean finished;
 
 
-    public Task()
+    Task()
     {
+        super();
         this.id = UUID.uuid();
+    }
+
+
+    public Task(String name, String description)
+    {
+        this();
+        this.name = name;
+        this.description = description;
     }
 
 

@@ -31,10 +31,10 @@ public interface Resources extends ClientBundle
 
 
     /**
-     * Global CSS rules for smartphone version
+     * Global CSS rules for mobile version
      * 
      * @return
      */
-    @Source("smartphone.css")
-    CssResource smartphone();
+    @Source("mobile.css")
+    CssResource mobile();
 }

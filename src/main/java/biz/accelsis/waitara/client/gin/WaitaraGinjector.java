@@ -1,7 +1,7 @@
 package biz.accelsis.waitara.client.gin;
 
-
 import biz.accelsis.waitara.client.application.ApplicationPresenter;
+import biz.accelsis.waitara.client.tasks.TasksPresenter;
 
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.inject.client.GinModules;
@@ -25,4 +25,5 @@ public interface WaitaraGinjector extends Ginjector
     // ------------------------------------------------------- presenters (a-z)
 
     Provider<ApplicationPresenter> getApplicationPresenter();
+    Provider<TasksPresenter> getTasksPresenter();
 }

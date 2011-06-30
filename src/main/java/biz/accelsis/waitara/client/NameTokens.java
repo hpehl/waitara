@@ -15,19 +15,14 @@ package biz.accelsis.waitara.client;
  * search engine crawling support.
  * 
  * @author $Author: harald.pehl $
- * @version $Date: 2010-09-23 13:52:31 +0200 (Do, 23. Sep 2010) $ $Revision: 88 $
+ * @version $Date: 2010-09-23 13:52:31 +0200 (Do, 23. Sep 2010) $ $Revision: 88
+ *          $
  */
 public class NameTokens
 {
     public static final String about = "!about";
-    public static final String clients = "!clients";
-    public static final String dashboard = "!dashboard";
-    public static final String help = "!help";
-    public static final String projects = "!projects";
-    public static final String reports = "!reports";
-    public static final String settings = "settings";
-    public static final String tags = "!tags";
-    public static final String terms = "!terms";
+    public static final String newTask = "!newTask";
+    public static final String tasks = "!tasks";
 
 
     public static String about()
@@ -36,50 +31,14 @@ public class NameTokens
     }
 
 
-    public static String clients()
+    public static String newTask()
     {
-        return clients;
+        return newTask;
     }
 
 
-    public static String dashboard()
+    public static String tasks()
     {
-        return dashboard;
-    }
-
-
-    public static String help()
-    {
-        return help;
-    }
-
-
-    public static String projects()
-    {
-        return projects;
-    }
-
-
-    public static String reports()
-    {
-        return reports;
-    }
-
-
-    public static String settings()
-    {
-        return settings;
-    }
-
-
-    public static String tags()
-    {
-        return tags;
-    }
-
-
-    public static String terms()
-    {
-        return terms;
+        return tasks;
     }
 }

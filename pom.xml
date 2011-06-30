@@ -34,51 +34,25 @@
 
 
     <properties>
-        <!-- GAE / GWT -->
-        <gae.application.name>waitara-app</gae.application.name>
-        <gae.application.version>1</gae.application.version>
-        <gae.version>1.5.0</gae.version>
-        <gae.plugin.version>0.8.4</gae.plugin.version>
+        <!-- GWT -->
         <gwt.version>2.3.0</gwt.version>
         <gwt.plugin.version>2.3.0</gwt.plugin.version>
-
-
-        <!-- GWT Frameworks -->
         <gwtp.version>0.6</gwtp.version>
 
         <!-- DI -->
         <guice.version>3.0</guice.version>
         <gin.version>1.5.0</gin.version>
 
-        <!-- Logging -->
-        <slf4j.version>1.6.1</slf4j.version>
-        <logback.version>0.9.22</logback.version>
-
         <!-- Test -->
         <junit.version>4.8.2</junit.version>
         <mockito.version>1.8.5</mockito.version>
 
         <!-- Misc -->
-        <gson.version>1.7.1</gson.version>
-        <guava.version>r09</guava.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
 
     <dependencies>
-        <!-- GAE -->
-        <dependency>
-            <groupId>net.kindleit</groupId>
-            <artifactId>gae-runtime</artifactId>
-            <version>${gae.version}</version>
-            <type>pom</type>
-        </dependency>
-        <dependency>
-            <groupId>javax.transaction</groupId>
-            <artifactId>jta</artifactId>
-            <version>1.1</version>
-        </dependency>
-
         <!-- GWT -->
         <dependency>
             <groupId>com.google.gwt</groupId>
@@ -105,8 +79,6 @@
             <classifier>sources</classifier>
             <scope>provided</scope>
         </dependency>
-
-        <!-- GWT Frameworks -->
         <dependency>
             <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-all</artifactId>
@@ -147,32 +119,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Guava -->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <classifier>gwt</classifier>
-            <version>${guava.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- Logging -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>${logback.version}</version>
-        </dependency>
-
         <!-- Test -->
         <dependency>
             <groupId>junit</groupId>
@@ -186,29 +132,10 @@
             <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.google.appengine</groupId>
-            <artifactId>appengine-api-labs</artifactId>
-            <version>${gae.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.appengine</groupId>
-            <artifactId>appengine-api-stubs</artifactId>
-            <version>${gae.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.appengine</groupId>
-            <artifactId>appengine-testing</artifactId>
-            <version>${gae.version}</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
 
     <build>
-        <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -239,52 +166,10 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.1.1</version>
-                <configuration>
-                    <webResources>
-                        <resource>
-                            <directory>src/main/webapp</directory>
-                            <filtering>true</filtering>
-                            <includes>
-                                <include>**/appengine-web.xml</include>
-                            </includes>
-                        </resource>
-                    </webResources>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.1</version>
-                <configuration>
-                    <goals>gae:deploy</goals>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>net.kindleit</groupId>
-                <artifactId>maven-gae-plugin</artifactId>
-                <version>${gae.plugin.version}</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>net.kindleit</groupId>
-                        <artifactId>gae-runtime</artifactId>
-                        <version>${gae.version}</version>
-                        <type>pom</type>
-                    </dependency>
-                </dependencies>
-                <configuration>
-                    <serverId>appengine.google.com</serverId>
-                    <appDir>${project.build.directory}/${project.artifactId}-${project.version}</appDir>
-                </configuration>
-            </plugin>
-            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
                 <version>${gwt.plugin.version}</version>
                 <configuration>
-                    <server>com.google.appengine.tools.development.gwt.AppEngineLauncher</server>
                     <port>8888</port>
                     <runTarget>/index.html</runTarget>
                     <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
@@ -308,7 +193,6 @@
                     <classpathContainers>
                         <classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
                         <classpathContainer>com.google.gwt.eclipse.core.GWT_CONTAINER</classpathContainer>
-                        <classpathContainer>com.google.appengine.eclipse.core.GAE_CONTAINER</classpathContainer>
                     </classpathContainers>
                     <additionalBuildcommands>
                         <buildCommand>
@@ -323,7 +207,6 @@
                     </additionalBuildcommands>
                     <additionalProjectnatures>
                         <projectnature>com.google.gwt.eclipse.core.gwtNature</projectnature>
-                        <projectnature>com.google.appengine.eclipse.core.gaeNature</projectnature>
                     </additionalProjectnatures>
                     <additionalConfig>
                         <file>
@@ -331,7 +214,7 @@
                             <content><![CDATA[ 
 <factorypath>
     <factorypathentry kind="PLUGIN" id="org.eclipse.jst.ws.annotations.core" enabled="true" runInBatchMode="false"/> 
-    <factorypathentry kind="VARJAR" id="M2_REPO/com/gwtplatform/gwtp/0.6/gwtp-all-0.6.jar" enabled="true" runInBatchMode="false"/> 
+    <factorypathentry kind="VARJAR" id="M2_REPO/com/gwtplatform/gwtp-all/0.6/gwtp-all-0.6.jar" enabled="true" runInBatchMode="false"/> 
 </factorypath>]]>
                             </content>
                         </file>
@@ -347,16 +230,6 @@ org.eclipse.jdt.apt.reconcileEnabled=true]]>
                     <excludes>
                         <exclude>com.google.gwt:gwt-dev</exclude>
                         <exclude>com.google.gwt:gwt-user</exclude>
-                        <exclude>com.google.appengine:appengine-api-1.0-sdk</exclude>
-                        <exclude>com.google.appengine:appengine-api-labs</exclude>
-                        <exclude>com.google.appengine:appengine-jsr107cache</exclude>
-                        <exclude>com.google.appengine:geronimo-jpa_3.0_spec</exclude>
-                        <exclude>com.google.appengine:geronimo-jta_1.1_spec</exclude>
-                        <exclude>com.google.appengine.orm:datanucleus-appengine</exclude>
-                        <exclude>org.datanucleus:datanucleus-core</exclude>
-                        <exclude>org.datanucleus:datanucleus-jpa</exclude>
-                        <exclude>org.apache.geronimo.specs:geronimo-jpa_3.0_spec</exclude>
-                        <exclude>org.apache.geronimo.specs:geronimo-jta_1.1_spec</exclude>
                         <exclude>javax.servlet:servlet-api</exclude>
                     </excludes>
                 </configuration>

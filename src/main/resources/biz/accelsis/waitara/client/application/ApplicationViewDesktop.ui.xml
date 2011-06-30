@@ -48,25 +48,15 @@
     </ui:style>
 
     <g:DockLayoutPanel unit="PX">
-        <g:north size="30">
-            <g:FlowPanel ui:field="navigationPanel" />
-        </g:north>
         <g:south size="20">
             <g:HTMLPanel>
                 <footer>
-                    <g:InlineHyperlink targetHistoryToken="{nameTokens.about}">About</g:InlineHyperlink>
-                    <g:InlineHyperlink targetHistoryToken="{nameTokens.help}">Help</g:InlineHyperlink>
-                    <g:InlineHyperlink targetHistoryToken="{nameTokens.terms}">Terms</g:InlineHyperlink>
+                    Waitara Task Management &copy; by <a href="http://www.accelsis.biz">Accelsis Technologies</a> 2011
                 </footer>
             </g:HTMLPanel>
         </g:south>
         <g:east size="250">
-            <g:HTMLPanel>
-                <aside>
-                    <g:FlowPanel ui:field="cockpitPanel" addStyleNames="{style.cockpitPanel} {style.roundedWhiteBox}"></g:FlowPanel>
-                    <g:FlowPanel ui:field="quickChartPanel" addStyleNames="{style.quickChartPanel}"></g:FlowPanel>
-                </aside>
-            </g:HTMLPanel>
+            <g:FlowPanel ui:field="navigationPanel" />
         </g:east>
         <g:center>
             <g:ScrollPanel ui:field="mainPanel" addStyleNames="{style.mainPanel} {style.roundedWhiteBox}"></g:ScrollPanel>

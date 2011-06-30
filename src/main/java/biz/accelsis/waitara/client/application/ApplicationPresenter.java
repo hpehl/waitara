@@ -1,11 +1,11 @@
 package biz.accelsis.waitara.client.application;
 
-
 import biz.accelsis.waitara.client.navigation.NavigationPresenter;
 
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.event.shared.GwtEvent.Type;
 import com.google.inject.Inject;
+import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.PresenterWidget;
 import com.gwtplatform.mvp.client.View;
@@ -24,22 +24,21 @@ import com.gwtplatform.mvp.client.proxy.RevealRootLayoutContentEvent;
  * {@link PresenterWidget}s:
  * <ul>
  * <li>{@link NavigationPresenter} in {@link #SLOT_Navigation}
- * <li>{@link CockpitPresenter} in {@link #SLOT_Cockpit}
- * <li>{@link QuickChartPresenter} in {@link #SLOT_QuickChart}
  * </ul>
  * 
  * @author $Author: harald.pehl $
  * @version $Date: 2010-12-17 21:37:43 +0100 (Fr, 17 Dez 2010) $ $Revision: 102
  *          $
  */
-public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy>
+public class ApplicationPresenter extends
+        Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy>
 {
     @ProxyStandard
     public interface MyProxy extends Proxy<ApplicationPresenter>
     {
     }
 
-    public interface MyView extends View
+    public interface MyView extends View, HasUiHandlers<ApplicationUiHandlers>
     {
     }
 
@@ -54,36 +53,16 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
      */
     public static final Object SLOT_Navigation = new Object();
 
-    /**
-     * Constant for the static control slot.
-     */
-    public static final Object SLOT_Cockpit = new Object();
-
-    /**
-     * Constant for the static chart slot.
-     */
-    public static final Object SLOT_QuickChart = new Object();
-
     private final NavigationPresenter navigationPresenter;
 
-
-    // private final CockpitPresenter cockpitPresenter;
-    // private final QuickChartPresenter quickChartPresenter;
 
     @Inject
     public ApplicationPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy,
 
-    final NavigationPresenter navigationPresenter/*
-                                                  * , final CockpitPresenter
-                                                  * cockpitPresenter, final
-                                                  * QuickChartPresenter
-                                                  * quickChartPresenter
-                                                  */)
+    final NavigationPresenter navigationPresenter)
     {
         super(eventBus, view, proxy);
         this.navigationPresenter = navigationPresenter;
-        // this.cockpitPresenter = cockpitPresenter;
-        // this.quickChartPresenter = quickChartPresenter;
     }
 
 
@@ -95,9 +74,7 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
 
 
     /**
-     * Sets {@link NavigationPresenter} in {@link #SLOT_Navigation},
-     * {@link CockpitPresenter} in {@link #SLOT_Cockpit} and
-     * {@link QuickChartPresenter} in {@link #SLOT_QuickChart}.
+     * Sets {@link NavigationPresenter} in {@link #SLOT_Navigation}.
      * 
      * @see com.gwtplatform.mvp.client.PresenterWidget#onReveal()
      */
@@ -105,7 +82,5 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
     protected void onReveal()
     {
         setInSlot(SLOT_Navigation, navigationPresenter);
-        // setInSlot(SLOT_Cockpit, cockpitPresenter);
-        // setInSlot(SLOT_QuickChart, quickChartPresenter);
     }
 }

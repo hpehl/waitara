@@ -3,8 +3,6 @@
 <module rename-to="waitara">
 
     <!-- GWT -->
-    <inherits name="com.google.common.annotations.Annotations" />
-    <inherits name="com.google.common.base.Base" />
     <inherits name="com.google.gwt.cell.Cell" />
     <inherits name="com.google.gwt.editor.Editor" />
     <inherits name="com.google.gwt.inject.Inject" />
@@ -17,7 +15,7 @@
     <inherits name="com.gwtplatform.mvp.Mvp" />
 
     <!-- Other -->
-    <inherits name="biz.accelsis.techtalk.geotracker.FormFactor" />
+    <inherits name="biz.accelsis.waitara.FormFactor" />
 
     <entry-point class="biz.accelsis.waitara.client.Waitara" />
 
@@ -30,7 +28,8 @@
         <when-property-is name="formfactor" value="mobile" />
     </replace-with> -->
 
-    <!-- Logging -->
+    <!-- Configuration -->
+    <set-configuration-property name="UiBinder.useSafeHtmlTemplates" value="true"/>
     <set-property name="gwt.logging.logLevel" value="FINE" />
     <set-property name="gwt.logging.enabled" value="TRUE" />
     <set-property name="gwt.logging.consoleHandler" value="ENABLED" />
