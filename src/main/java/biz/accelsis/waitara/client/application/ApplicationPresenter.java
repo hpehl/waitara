@@ -1,10 +1,11 @@
 package biz.accelsis.waitara.client.application;
 
+import javax.inject.Inject;
+
 import biz.accelsis.waitara.client.navigation.NavigationPresenter;
 
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.event.shared.GwtEvent.Type;
-import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.PresenterWidget;
@@ -30,8 +31,7 @@ import com.gwtplatform.mvp.client.proxy.RevealRootLayoutContentEvent;
  * @version $Date: 2010-12-17 21:37:43 +0100 (Fr, 17 Dez 2010) $ $Revision: 102
  *          $
  */
-public class ApplicationPresenter extends
-        Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy>
+public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy>
 {
     @ProxyStandard
     public interface MyProxy extends Proxy<ApplicationPresenter>

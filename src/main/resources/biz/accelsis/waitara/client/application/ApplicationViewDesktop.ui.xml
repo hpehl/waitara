@@ -2,8 +2,22 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
 
     <ui:with field="nameTokens" type="biz.accelsis.waitara.client.NameTokens" />
-    <ui:with field="resources" type="biz.accelsis.waitara.client.resources.Resources" />
+    <ui:image field="logo" src="../resources/task_logo.png" />
     <ui:style>
+        @sprite header {
+            color: white;
+            background-color: #3eb0c7;
+            gwt-image: "logo";
+            padding: 0px 20px;
+            width: auto;
+        }
+        
+        header h1 {
+            padding-top: 5px;
+            padding-left: 50px;
+            border-bottom: none;
+        }
+        
         .roundedWhiteBox {
             background-color: white;
             -webkit-border-radius: 5px;
@@ -15,7 +29,7 @@
         }
         
         .mainPanel {
-            margin: 20px 2px 20px 30px;
+            margin: 20px 2px 20px 20px;
         }
         
         aside {
@@ -31,15 +45,15 @@
         }
         
         footer {
-            padding: 0px 30px;
-        }
-        
-        footer a, footer a:visited {
             font-size: 10px;
-            float: left;
             color: #62635e;
             line-height: 20px;
             padding: 0px 5px;
+            padding: 0px 20px;
+        }
+        
+        footer a,footer a:visited {
+            color: #62635e;
         }
         
         footer a:hover {
@@ -48,10 +62,21 @@
     </ui:style>
 
     <g:DockLayoutPanel unit="PX">
+        <g:north size="48">
+            <g:HTMLPanel>
+                <header>
+                    <h1>Waitara Task Management</h1>
+                </header>
+            </g:HTMLPanel>
+        </g:north>
         <g:south size="20">
             <g:HTMLPanel>
                 <footer>
-                    Waitara Task Management &copy; by <a href="http://www.accelsis.biz">Accelsis Technologies</a> 2011
+                    Waitara Task Management &copy; by
+                    <a href="http://www.accelsis.biz">Accelsis Technologies</a>
+                    2011&nbsp;|&nbsp;
+                    <g:InlineHyperlink targetHistoryToken="{nameTokens.help}">Help</g:InlineHyperlink>&nbsp;|&nbsp;
+                    <g:InlineHyperlink targetHistoryToken="{nameTokens.about}">About</g:InlineHyperlink>
                 </footer>
             </g:HTMLPanel>
         </g:south>

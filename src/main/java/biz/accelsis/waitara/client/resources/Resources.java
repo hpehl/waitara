@@ -18,7 +18,13 @@ public interface Resources extends ClientBundle
      * @return
      */
     @Source("desktop.css")
-    CssResource desktop();
+    DesktopResource desktop();
+
+    public interface DesktopResource extends CssResource
+    {
+        @ClassName("selectedNavigationEntry")
+        String selectedNavigationEntry();
+    }
 
 
     /**

@@ -1,6 +1,8 @@
-package biz.accelsis.waitara.client.model;
+package biz.accelsis.waitara.client.tasks.model;
 
 import java.util.Date;
+
+import biz.accelsis.waitara.client.model.UUID;
 
 /**
  * @author $LastChangedBy:$

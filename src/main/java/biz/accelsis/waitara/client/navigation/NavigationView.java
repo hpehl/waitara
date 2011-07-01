@@ -1,5 +1,9 @@
 package biz.accelsis.waitara.client.navigation;
 
+import javax.inject.Inject;
+
+import biz.accelsis.waitara.client.resources.Resources;
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -20,15 +24,23 @@ public class NavigationView extends ViewImpl implements NavigationPresenter.MyVi
 
     @UiField InlineHyperlink tasks;
     @UiField InlineHyperlink newTask;
+    @UiField InlineHyperlink settings;
+    @UiField InlineHyperlink help;
     @UiField InlineHyperlink about;
     // @formatter:on
 
     private final Widget widget;
+    private final Resources resources;
+    private final InlineHyperlink[] navigationLinks;
 
 
-    public NavigationView()
+    @Inject
+    public NavigationView(final Resources resources)
     {
+        this.resources = resources;
+        this.resources.desktop().ensureInjected();
         this.widget = uiBinder.createAndBindUi(this);
+        this.navigationLinks = new InlineHyperlink[] {tasks, newTask, settings, help, about,};
     }
 
 
@@ -36,5 +48,25 @@ public class NavigationView extends ViewImpl implements NavigationPresenter.MyVi
     public Widget asWidget()
     {
         return widget;
+    }
+
+
+    @Override
+    public void highlight(String token)
+    {
+        if (token != null)
+        {
+            for (InlineHyperlink link : navigationLinks)
+            {
+                if (token.equals(link.getTargetHistoryToken()))
+                {
+                    link.addStyleName(resources.desktop().selectedNavigationEntry());
+                }
+                else
+                {
+                    link.removeStyleName(resources.desktop().selectedNavigationEntry());
+                }
+            }
+        }
     }
 }

@@ -1,10 +1,15 @@
-package biz.accelsis.waitara.client.tasks;
+package biz.accelsis.waitara.client.tasks.presenter;
+
+import java.util.List;
+
+import javax.inject.Inject;
 
 import biz.accelsis.waitara.client.NameTokens;
 import biz.accelsis.waitara.client.application.ApplicationPresenter;
+import biz.accelsis.waitara.client.tasks.model.Task;
+import biz.accelsis.waitara.client.tasks.model.TaskStore;
 
 import com.google.gwt.event.shared.EventBus;
-import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
@@ -27,13 +32,17 @@ public class TasksPresenter extends Presenter<TasksPresenter.MyView, TasksPresen
 
     public interface MyView extends View
     {
+        void updateTasks(List<Task> tasks);
     }
+
+    private final TaskStore taskStore;
 
 
     @Inject
-    public TasksPresenter(EventBus eventBus, MyView view, MyProxy proxy)
+    public TasksPresenter(EventBus eventBus, MyView view, MyProxy proxy, TaskStore taskStore)
     {
         super(eventBus, view, proxy);
+        this.taskStore = taskStore;
     }
 
 
@@ -41,5 +50,13 @@ public class TasksPresenter extends Presenter<TasksPresenter.MyView, TasksPresen
     protected void revealInParent()
     {
         RevealContentEvent.fire(this, ApplicationPresenter.TYPE_SetMainContent, this);
+    }
+
+
+    @Override
+    protected void onReset()
+    {
+        List<Task> tasks = taskStore.load();
+        getView().updateTasks(tasks);
     }
 }
