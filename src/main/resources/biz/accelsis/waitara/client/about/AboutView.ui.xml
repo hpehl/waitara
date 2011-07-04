@@ -14,13 +14,9 @@
     <g:HTML>
         <h1>About</h1>
         <p>
-            Waitara (
-            <a href="http://www.maoridictionary.co.nz/index.cfm?dictionaryKeywords=task">Maori for "Task"</a>
-            ) is a demo task manager for an article in
-            <a href="http://www.sigs-datacom.de/fachzeitschriften/javaspektrum.html">JavaSPEKTRUM</a>
-            written by
-            <a href="http://harald.pehl.name">Harald Pehl</a>
-            .
+            Waitara (<a href="http://www.maoridictionary.co.nz/index.cfm?dictionaryKeywords=task">Maori for "Task"</a>) is a demo task manager 
+            for an article in <a href="http://www.sigs-datacom.de/fachzeitschriften/javaspektrum.html">JavaSPEKTRUM</a> written 
+            by <a href="http://harald.pehl.name">Harald Pehl</a>.
         </p>
     </g:HTML>
 
