@@ -31,6 +31,17 @@
             <url>svn:https://waitara.googlecode.com/svn/site</url>
         </site>
     </distributionManagement>
+    <repositories>
+        <repository>
+            <id>pehl-parent</id>
+            <url>http://pehl-parent.googlecode.com/svn/repository</url>
+        </repository>
+        <repository>
+            <id>piriti</id>
+            <url>http://piriti.googlecode.com/svn/repository</url>
+        </repository>
+    </repositories>
+
 
 
     <properties>
@@ -38,6 +49,8 @@
         <gwt.version>2.3.0</gwt.version>
         <gwt.plugin.version>2.3.0</gwt.plugin.version>
         <gwtp.version>0.6</gwtp.version>
+        <piriti.version>0.7b3</piriti.version>
+        <totoe.version>0.2.4</totoe.version>
 
         <!-- DI -->
         <guice.version>3.0</guice.version>
@@ -83,6 +96,18 @@
             <groupId>com.gwtplatform</groupId>
             <artifactId>gwtp-all</artifactId>
             <version>${gwtp.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>name.pehl.piriti</groupId>
+            <artifactId>piriti-core</artifactId>
+            <version>${piriti.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>name.pehl</groupId>
+            <artifactId>totoe</artifactId>
+            <version>${totoe.version}</version>
             <scope>provided</scope>
         </dependency>
 

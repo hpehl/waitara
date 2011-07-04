@@ -14,9 +14,8 @@ public class TaskAction
 {
     public static enum Action
     {
+        DETAIL,
         EDIT,
-        COPY,
-        GOON,
         DELETE
     }
 

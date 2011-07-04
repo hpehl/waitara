@@ -46,6 +46,7 @@
         
         footer {
             font-size: 10px;
+            letter-spacing: 0.1em;
             color: #62635e;
             line-height: 20px;
             padding: 0px 5px;

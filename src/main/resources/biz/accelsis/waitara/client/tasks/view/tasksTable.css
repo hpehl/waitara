@@ -12,7 +12,12 @@
 }
 
 .cellTableHeader {
-    
+    text-align: left;
+    font-size: 11pt;
+    font-weight: bold;
+    line-height: 2em;
+    padding: 5px 10px;
+    border-bottom: 2px solid #dedede;
 }
 
 .cellTableCell,.cellTableFooter {
@@ -65,7 +70,7 @@
 }
 
 .cellTableHoveredRow {
-    
+    background-color: #e7f8fb;
 }
 
 .cellTableHoveredRowCell {
@@ -110,38 +115,18 @@
 }
 
 /* ----------------------------------------------- Custom CellTable classes */
-.activeActivity {
-    background-color: #dbf1aa;
+.nameColumn {
+    width: 10em;
 }
 
-.oddDays {
-    background-color: #e9ffbf;
+.descriptionColumn {
+    width: 15em;
 }
 
-.startColumn {
-    width: 7em;
-}
-
-.durationFromToColumn {
-    width: 8em;
-}
-
-.durationInHoursColumn {
+.dueDateColumn {
     width: 4em;
 }
 
-.nameColumn {
-    
-}
-
-.projectColumn {
-    
-}
-
-.actionColumn {
-    width: 40px;
-}
-
-.hideActions {
-    visibility: hidden;
+.finishedColumn {
+    width: 20px;
 }

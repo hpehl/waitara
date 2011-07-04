@@ -10,7 +10,7 @@ import biz.accelsis.waitara.client.model.UUID;
  */
 public class Task
 {
-    private final String id;
+    private String id;
     private String name;
     private String description;
     private Date dueDate;
@@ -19,7 +19,6 @@ public class Task
 
     Task()
     {
-        super();
         this.id = UUID.uuid();
     }
 
@@ -84,6 +83,12 @@ public class Task
     public void setFinished(boolean finished)
     {
         this.finished = finished;
+    }
+
+
+    protected void setId(String id)
+    {
+        this.id = id;
     }
 
 

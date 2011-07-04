@@ -15,6 +15,7 @@
     <inherits name="com.gwtplatform.mvp.Mvp" />
 
     <!-- Other -->
+    <inherits name="name.pehl.piriti.json.JSON" />
     <inherits name="biz.accelsis.waitara.FormFactor" />
 
     <entry-point class="biz.accelsis.waitara.client.Waitara" />

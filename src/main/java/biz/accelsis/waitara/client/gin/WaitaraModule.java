@@ -13,7 +13,10 @@ import biz.accelsis.waitara.client.navigation.NavigationView;
 import biz.accelsis.waitara.client.resources.Resources;
 import biz.accelsis.waitara.client.settings.SettingsPresenter;
 import biz.accelsis.waitara.client.settings.SettingsView;
+import biz.accelsis.waitara.client.tasks.model.TaskFactory;
+import biz.accelsis.waitara.client.tasks.model.TaskReader;
 import biz.accelsis.waitara.client.tasks.model.TaskStore;
+import biz.accelsis.waitara.client.tasks.model.TaskWriter;
 import biz.accelsis.waitara.client.tasks.presenter.TasksPresenter;
 import biz.accelsis.waitara.client.tasks.view.TasksView;
 
@@ -36,10 +39,17 @@ public class WaitaraModule extends AbstractPresenterModule
         // Resources
         bind(Resources.class).in(Singleton.class);
 
+        // JsonReader / Writer
+        // Bind them as eager singletons so that the JsonRegistry
+        // is setup correctly!
+        bind(TaskReader.class).asEagerSingleton();
+        bind(TaskWriter.class).asEagerSingleton();
+
         // Constants
         bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.tasks);
 
         // Misc
+        bind(TaskFactory.class).in(Singleton.class);
         bind(TaskStore.class).in(Singleton.class);
 
         // PresenterWidgets (a-z)

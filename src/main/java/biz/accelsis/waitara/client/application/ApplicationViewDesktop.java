@@ -21,6 +21,5 @@ public class ApplicationViewDesktop extends AbstractApplicationView
         this.resources = resources;
         this.resources.desktop().ensureInjected();
         this.widget = uiBinder.createAndBindUi(this);
-
     }
 }

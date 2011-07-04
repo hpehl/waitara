@@ -6,31 +6,16 @@ public interface TasksTableResources extends CellTable.Resources
 {
     public interface TasksTableStyle extends CellTable.Style
     {
-        String activeActivity();
-
-
-        String oddDays();
-
-
-        String startColumn();
-
-
-        String durationInHoursColumn();
-
-
-        String durationFromToColumn();
-
-
         String nameColumn();
 
 
-        String projectColumn();
+        String descriptionColumn();
 
 
-        String actionColumn();
+        String dueDateColumn();
 
 
-        String hideActions();
+        String finishedColumn();
     }
 
 

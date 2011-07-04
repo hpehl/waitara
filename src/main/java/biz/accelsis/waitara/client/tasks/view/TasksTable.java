@@ -12,6 +12,9 @@ import biz.accelsis.waitara.client.tasks.model.Task;
 import biz.accelsis.waitara.client.ui.FormatUtils;
 
 import com.google.gwt.event.shared.HandlerRegistration;
+import com.google.gwt.safehtml.shared.SafeHtml;
+import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.user.cellview.client.CellTable;
 
 /**
@@ -51,8 +54,8 @@ public class TasksTable extends CellTable<Task> implements HasTaskActionHandlers
                 return task.getName();
             }
         });
-        addColumnStyleName(0, resources.cellTableStyle().startColumn());
-        addColumn(nameColumn);
+        addColumnStyleName(0, resources.cellTableStyle().nameColumn());
+        addColumn(nameColumn, "Name");
 
         // Column #1: Description
         TaskColumn descriptionColumn = new TaskColumn(this, new TaskTextRenderer()
@@ -63,8 +66,8 @@ public class TasksTable extends CellTable<Task> implements HasTaskActionHandlers
                 return task.getDescription();
             }
         });
-        addColumnStyleName(1, resources.cellTableStyle().durationFromToColumn());
-        addColumn(descriptionColumn);
+        addColumnStyleName(1, resources.cellTableStyle().descriptionColumn());
+        addColumn(descriptionColumn, "Description");
 
         // Column #2: Due Date
         TaskColumn dueDateColumn = new TaskColumn(this, new TaskTextRenderer()
@@ -75,8 +78,24 @@ public class TasksTable extends CellTable<Task> implements HasTaskActionHandlers
                 return FormatUtils.date(task.getDueDate());
             }
         });
-        addColumnStyleName(2, resources.cellTableStyle().durationInHoursColumn());
-        addColumn(dueDateColumn);
+        addColumnStyleName(2, resources.cellTableStyle().dueDateColumn());
+        addColumn(dueDateColumn, "Due Date");
+
+        // Column #3: Finished
+        TaskColumn finishedColumn = new TaskColumn(this, new TaskRenderer()
+        {
+            @Override
+            public SafeHtml render(Task task)
+            {
+                if (task.isFinished())
+                {
+                    return new SafeHtmlBuilder().appendHtmlConstant("&#x2713;").toSafeHtml();
+                }
+                return SafeHtmlUtils.EMPTY_SAFE_HTML;
+            }
+        });
+        addColumnStyleName(3, resources.cellTableStyle().finishedColumn());
+        addColumn(finishedColumn, "Finished");
     }
 
 
