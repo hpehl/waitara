@@ -4,11 +4,16 @@ import javax.inject.Inject;
 
 import biz.accelsis.waitara.client.tasks.model.Task;
 import biz.accelsis.waitara.client.tasks.presenter.TaskDetailPresenter;
+import biz.accelsis.waitara.client.ui.FormatUtils;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.HeadingElement;
+import com.google.gwt.safehtml.shared.SafeHtml;
+import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.InlineLabel;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 
@@ -19,6 +24,10 @@ public class TaskDetailView extends ViewImpl implements TaskDetailPresenter.MyVi
     private static TaskDetailUi uiBinder = GWT.create(TaskDetailUi.class);
     
     @UiField HeadingElement header;
+    @UiField InlineLabel name;
+    @UiField InlineLabel description;
+    @UiField InlineLabel dueDate;
+    @UiField HTML finished;
     // @formatter:on
 
     private final Widget widget;
@@ -41,11 +50,30 @@ public class TaskDetailView extends ViewImpl implements TaskDetailPresenter.MyVi
     @Override
     public void showTask(Task task)
     {
-        String text = "Unknown Task";
         if (task != null)
         {
-            text = "Details for task '" + task.getName() + "'";
+            header.setInnerText("Details for task '" + task.getName() + "'");
+            name.setText(task.getName());
+            description.setText(task.getDescription());
+            if (task.getDueDate() != null)
+            {
+                dueDate.setText(FormatUtils.date(task.getDueDate()));
+            }
+            else
+            {
+                dueDate.setText("No due date specified");
+            }
+            String entity = task.isFinished() ? "&#9745;" : "&#9744;";
+            SafeHtml safeHtml = new SafeHtmlBuilder().appendHtmlConstant(entity).toSafeHtml();
+            finished.setHTML(safeHtml);
         }
-        header.setInnerText(text);
+        else
+        {
+            header.setInnerText("Unknown Task");
+            name.setText("");
+            description.setText("");
+            dueDate.setText("");
+            finished.setText("");
+        }
     }
 }

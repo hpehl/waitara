@@ -14,7 +14,6 @@ import biz.accelsis.waitara.client.ui.FormatUtils;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.safehtml.shared.SafeHtml;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
-import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.user.cellview.client.CellTable;
 
 /**
@@ -87,11 +86,8 @@ public class TasksTable extends CellTable<Task> implements HasTaskActionHandlers
             @Override
             public SafeHtml render(Task task)
             {
-                if (task.isFinished())
-                {
-                    return new SafeHtmlBuilder().appendHtmlConstant("&#x2713;").toSafeHtml();
-                }
-                return SafeHtmlUtils.EMPTY_SAFE_HTML;
+                String entity = task.isFinished() ? "&#9745;" : "&#9744;";
+                return new SafeHtmlBuilder().appendHtmlConstant(entity).toSafeHtml();
             }
         });
         addColumnStyleName(3, resources.cellTableStyle().finishedColumn());

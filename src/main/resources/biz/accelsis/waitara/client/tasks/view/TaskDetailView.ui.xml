@@ -1,9 +1,67 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
-<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
 
-    <g:HTMLPanel>
-        <h1 ui:field="header"></h1>
-        <p>TODO</p>
-    </g:HTMLPanel>
+	<ui:with field="nameTokens" type="biz.accelsis.waitara.client.NameTokens" />
+	<ui:style>
+		section.details dl {
+			margin: 10px;
+		}
+		
+		section.details dl dt {
+			float: left;
+			clear: left;
+			width: 10em;
+			padding-bottom: 10px;
+		}
+		
+		section.details dl dd {
+			float: left;
+			padding-bottom: 10px;
+		}
+		
+		section.details dl dd.last {
+			padding-bottom: 20px;
+		}
+		
+        div.clear {
+            clear: both;
+            margin-left: 10px;
+        }
 
-</ui:UiBinder> 
+		div.clear a {
+			color: #03899C;
+		}
+		
+		div.clear a:hover {
+			color: #1F6B75;
+		}
+	</ui:style>
+
+	<g:HTMLPanel>
+		<section class="{style.details}">
+			<h1 ui:field="header"></h1>
+			<dl>
+				<dt>Name:</dt>
+				<dd>
+					<g:InlineLabel ui:field="name" />
+				</dd>
+				<dt>Description:</dt>
+				<dd>
+					<g:InlineLabel ui:field="description" />
+				</dd>
+				<dt>Due Date:</dt>
+				<dd>
+					<g:InlineLabel ui:field="dueDate" />
+				</dd>
+				<dt>Finished:</dt>
+				<dd class="{style.last}">
+					<g:HTML ui:field="finished" />
+				</dd>
+			</dl>
+		</section>
+		<g:Hyperlink targetHistoryToken="{nameTokens.taskDetail}"
+			addStyleNames="{style.clear}">Back to all tasks</g:Hyperlink>
+	</g:HTMLPanel>
+
+</ui:UiBinder>
