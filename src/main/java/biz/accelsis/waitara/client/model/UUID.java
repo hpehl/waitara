@@ -1,9 +1,5 @@
 package biz.accelsis.waitara.client.model;
 
-/**
- * @author $LastChangedBy:$
- * @version $LastChangedRevision:$
- */
 public class UUID
 {
     private static final char[] CHARS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".toCharArray();

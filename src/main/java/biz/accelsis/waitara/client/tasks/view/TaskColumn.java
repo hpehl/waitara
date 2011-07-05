@@ -6,11 +6,6 @@ import com.google.gwt.cell.client.Cell;
 import com.google.gwt.text.shared.SafeHtmlRenderer;
 import com.google.gwt.user.cellview.client.Column;
 
-/**
- * @author $LastChangedBy:$
- * @version $LastChangedRevision:$
- */
-
 public class TaskColumn extends Column<Task, Task>
 {
     public TaskColumn(Cell<Task> cell)

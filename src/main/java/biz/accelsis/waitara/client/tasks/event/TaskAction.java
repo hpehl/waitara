@@ -5,10 +5,6 @@ import biz.accelsis.waitara.client.tasks.model.Task;
 import com.gwtplatform.dispatch.annotation.GenEvent;
 import com.gwtplatform.dispatch.annotation.Order;
 
-/**
- * @author $LastChangedBy:$
- * @version $LastChangedRevision:$
- */
 @GenEvent
 public class TaskAction
 {

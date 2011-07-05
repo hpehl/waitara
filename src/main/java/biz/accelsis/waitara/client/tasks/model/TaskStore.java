@@ -6,10 +6,6 @@ import javax.inject.Inject;
 
 import com.google.gwt.storage.client.Storage;
 
-/**
- * @author $LastChangedBy:$
- * @version $LastChangedRevision:$
- */
 public class TaskStore
 {
     final static String TASKS_KEY = "biz.accelsis.waitara.client.tasks";

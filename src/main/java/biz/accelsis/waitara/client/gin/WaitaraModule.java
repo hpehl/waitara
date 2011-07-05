@@ -25,10 +25,6 @@ import com.google.inject.Singleton;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
 
-/**
- * @author $LastChangedBy: harald.pehl $
- * @version $LastChangedRevision: 202 $
- */
 public class WaitaraModule extends AbstractPresenterModule
 {
     @Override

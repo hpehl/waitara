@@ -20,11 +20,6 @@ import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.client.proxy.RevealContentEvent;
 
-/**
- * @author $Author: harald.pehl $
- * @version $Date: 2010-12-01 22:35:01 +0100 (Mi, 01. Dez 2010) $ $Revision: 85
- *          $
- */
 public class TasksPresenter extends Presenter<TasksPresenter.MyView, TasksPresenter.MyProxy> implements TaskUiHandlers
 {
     @ProxyStandard

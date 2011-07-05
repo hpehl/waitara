@@ -11,11 +11,6 @@ import com.google.gwt.user.client.ui.InlineHyperlink;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 
-/**
- * @author $Author: harald.pehl $
- * @version $Date: 2010-12-16 10:41:46 +0100 (Do, 16 Dez 2010) $ $Revision: 175
- *          $
- */
 public class NavigationView extends ViewImpl implements NavigationPresenter.MyView
 {
     // @formatter:off

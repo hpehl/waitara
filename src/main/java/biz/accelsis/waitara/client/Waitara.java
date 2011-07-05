@@ -6,10 +6,6 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.gwtplatform.mvp.client.DelayedBindRegistry;
 
-/**
- * @author $Author: harald.pehl $
- * @version $Revision: 95 $
- */
 public class Waitara implements EntryPoint
 {
     public static final WaitaraGinjector ginjector = GWT.create(WaitaraGinjector.class);

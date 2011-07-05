@@ -16,10 +16,6 @@ import com.google.gwt.safehtml.shared.SafeHtml;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.google.gwt.user.cellview.client.CellTable;
 
-/**
- * @author $LastChangedBy:$
- * @version $LastChangedRevision:$
- */
 public class TasksTable extends CellTable<Task> implements HasTaskActionHandlers
 {
     // -------------------------------------------------------- private members

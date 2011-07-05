@@ -4,11 +4,6 @@ import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.Widget;
 
-/**
- * @author $Author: harald.pehl $
- * @version $Date: 2010-12-14 17:40:17 +0100 (Di, 14 Dez 2010) $ $Revision: 102
- *          $
- */
 public final class UiUtils
 {
     private UiUtils()

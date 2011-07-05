@@ -11,10 +11,6 @@ import com.google.gwt.safehtml.shared.SafeHtml;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.google.gwt.text.shared.SafeHtmlRenderer;
 
-/**
- * @author $LastChangedBy:$
- * @version $LastChangedRevision:$
- */
 public class TaskCell extends AbstractSafeHtmlCell<Task>
 {
     private final TasksTable tasksTable;

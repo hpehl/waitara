@@ -4,11 +4,6 @@ import biz.accelsis.waitara.client.tasks.model.Task;
 
 import com.google.gwt.view.client.ProvidesKey;
 
-/**
- * @author $LastChangedBy:$
- * @version $LastChangedRevision:$
- */
-
 class TaskKeyProvider implements ProvidesKey<Task>
 {
     @Override

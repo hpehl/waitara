@@ -4,10 +4,6 @@ import java.util.Date;
 
 import biz.accelsis.waitara.client.model.UUID;
 
-/**
- * @author $LastChangedBy:$
- * @version $LastChangedRevision:$
- */
 public class Task
 {
     private String id;
