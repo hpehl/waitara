@@ -6,7 +6,7 @@ import biz.accelsis.waitara.client.tasks.model.Task;
 import biz.accelsis.waitara.client.tasks.presenter.TaskDetailPresenter;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.dom.client.HeadElement;
+import com.google.gwt.dom.client.HeadingElement;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Widget;
@@ -18,14 +18,14 @@ public class TaskDetailView extends ViewImpl implements TaskDetailPresenter.MyVi
     interface TaskDetailUi extends UiBinder<Widget, TaskDetailView> {}
     private static TaskDetailUi uiBinder = GWT.create(TaskDetailUi.class);
     
-    @UiField HeadElement header;
+    @UiField HeadingElement header;
     // @formatter:on
 
     private final Widget widget;
 
 
     @Inject
-    public TaskDetailView(final TasksTableResources resources)
+    public TaskDetailView()
     {
         widget = uiBinder.createAndBindUi(this);
     }
@@ -41,10 +41,11 @@ public class TaskDetailView extends ViewImpl implements TaskDetailPresenter.MyVi
     @Override
     public void showTask(Task task)
     {
+        String text = "Unknown Task";
         if (task != null)
         {
-            String text = header.getInnerText();
-            header.setInnerText(text + task.getName());
+            text = "Details for task '" + task.getName() + "'";
         }
+        header.setInnerText(text);
     }
 }

@@ -75,10 +75,7 @@ public class TaskDetailPresenter extends Presenter<TaskDetailPresenter.MyView, T
                     break;
                 }
             }
-            if (taskToShow != null)
-            {
-                getView().showTask(taskToShow);
-            }
+            getView().showTask(taskToShow);
         }
         else
         {

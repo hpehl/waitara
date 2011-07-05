@@ -7,11 +7,10 @@ import com.gwtplatform.mvp.client.ViewImpl;
 
 public class SettingsView extends ViewImpl implements SettingsPresenter.MyView
 {
-    interface HelpUi extends UiBinder<Widget, SettingsView>
-    {
-    }
-
+    // @formatter:off
+    interface HelpUi extends UiBinder<Widget, SettingsView> { }
     private static HelpUi uiBinder = GWT.create(HelpUi.class);
+    // @formatter:on
 
     private final Widget widget;
 

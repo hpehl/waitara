@@ -22,7 +22,7 @@ public class TaskCell extends AbstractSafeHtmlCell<Task>
 
     public TaskCell(TasksTable tasksTable, SafeHtmlRenderer<Task> renderer)
     {
-        super(renderer, "click", "mouseover", "mouseout");
+        super(renderer, "click");
         this.tasksTable = tasksTable;
     }
 

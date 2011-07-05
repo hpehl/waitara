@@ -7,11 +7,10 @@ import com.gwtplatform.mvp.client.ViewImpl;
 
 public class HelpView extends ViewImpl implements HelpPresenter.MyView
 {
-    interface HelpUi extends UiBinder<Widget, HelpView>
-    {
-    }
-
+    // @formatter:off
+    interface HelpUi extends UiBinder<Widget, HelpView> {}
     private static HelpUi uiBinder = GWT.create(HelpUi.class);
+    // @formatter:on
 
     private final Widget widget;
 
