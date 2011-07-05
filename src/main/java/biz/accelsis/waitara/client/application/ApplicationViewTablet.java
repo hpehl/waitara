@@ -1,8 +1,5 @@
-package biz.accelsis.waitara.client.application.tablet;
+package biz.accelsis.waitara.client.application;
 
-import javax.inject.Inject;
-
-import biz.accelsis.waitara.client.application.AbstractApplicationView;
 import biz.accelsis.waitara.client.resources.Resources;
 
 import com.google.gwt.core.client.GWT;
@@ -16,11 +13,17 @@ public class ApplicationViewTablet extends AbstractApplicationView
     private static ApplicationUi uiBinder = GWT.create(ApplicationUi.class);
     // @formatter:on
 
-    @Inject
-    public ApplicationViewTablet(Resources resources)
+    @Override
+    protected void injectCss(Resources resources)
     {
-        this.resources = resources;
-        this.resources.mobile().ensureInjected();
-        this.widget = uiBinder.createAndBindUi(this);
+        resources.tablet().ensureInjected();
+
+    }
+
+
+    @Override
+    protected Widget initUi()
+    {
+        return uiBinder.createAndBindUi(this);
     }
 }

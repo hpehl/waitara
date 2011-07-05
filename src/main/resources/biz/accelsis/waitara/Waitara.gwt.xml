@@ -20,14 +20,18 @@
 
     <entry-point class="biz.accelsis.waitara.client.Waitara" />
 
-    <!-- Device dependent settings
-    <replace-with class="biz.accelsis.techtalk.geotracker.client.ApplicationViewDesktop">
-        <when-type-is class="biz.accelsis.techtalk.geotracker.client.ApplicationView" />
+    <!-- Device dependent settings -->
+    <replace-with class="biz.accelsis.waitara.client.application.ApplicationViewDesktop">
+        <when-type-is class="biz.accelsis.waitara.client.application.ApplicationView" />
     </replace-with>
-    <replace-with class="biz.accelsis.techtalk.geotracker.client.ApplicationViewMobile">
+    <replace-with class="biz.accelsis.waitara.client.application.ApplicationViewTablet">
+        <when-type-is class="biz.accelsis.techtalk.geotracker.client.ApplicationView" />
+        <when-property-is name="formfactor" value="tablet" />
+    </replace-with>
+    <replace-with class="biz.accelsis.waitara.client.application.ApplicationViewMobile">
         <when-type-is class="biz.accelsis.techtalk.geotracker.client.ApplicationView" />
         <when-property-is name="formfactor" value="mobile" />
-    </replace-with> -->
+    </replace-with>
 
     <!-- Configuration -->
     <set-configuration-property name="UiBinder.useSafeHtmlTemplates" value="true"/>

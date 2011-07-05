@@ -12,7 +12,7 @@ import com.gwtplatform.mvp.client.DelayedBindRegistry;
  */
 public class Waitara implements EntryPoint
 {
-    public final WaitaraGinjector ginjector = GWT.create(WaitaraGinjector.class);
+    public static final WaitaraGinjector ginjector = GWT.create(WaitaraGinjector.class);
 
 
     @Override

@@ -5,7 +5,6 @@ import biz.accelsis.waitara.client.WaitaraPlaceManager;
 import biz.accelsis.waitara.client.about.AboutPresenter;
 import biz.accelsis.waitara.client.about.AboutView;
 import biz.accelsis.waitara.client.application.ApplicationPresenter;
-import biz.accelsis.waitara.client.application.desktop.ApplicationViewDesktop;
 import biz.accelsis.waitara.client.help.HelpPresenter;
 import biz.accelsis.waitara.client.help.HelpView;
 import biz.accelsis.waitara.client.navigation.NavigationPresenter;
@@ -59,8 +58,7 @@ public class WaitaraModule extends AbstractPresenterModule
 
         // Presenters (a-z)
         bindPresenter(AboutPresenter.class, AboutPresenter.MyView.class, AboutView.class, AboutPresenter.MyProxy.class);
-        bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyView.class, ApplicationViewDesktop.class,
-                ApplicationPresenter.MyProxy.class);
+        bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyProxy.class);
         bindPresenter(HelpPresenter.class, HelpPresenter.MyView.class, HelpView.class, HelpPresenter.MyProxy.class);
         bindPresenter(SettingsPresenter.class, SettingsPresenter.MyView.class, SettingsView.class,
                 SettingsPresenter.MyProxy.class);

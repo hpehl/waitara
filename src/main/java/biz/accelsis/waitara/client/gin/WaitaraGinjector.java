@@ -3,6 +3,7 @@ package biz.accelsis.waitara.client.gin;
 import biz.accelsis.waitara.client.about.AboutPresenter;
 import biz.accelsis.waitara.client.application.ApplicationPresenter;
 import biz.accelsis.waitara.client.help.HelpPresenter;
+import biz.accelsis.waitara.client.resources.Resources;
 import biz.accelsis.waitara.client.settings.SettingsPresenter;
 import biz.accelsis.waitara.client.tasks.presenter.TaskDetailPresenter;
 import biz.accelsis.waitara.client.tasks.presenter.TasksPresenter;
@@ -26,6 +27,7 @@ public interface WaitaraGinjector extends Ginjector
 
     EventBus getEventBus();
     PlaceManager getPlaceManager();
+    Resources getResources();
 
     // ------------------------------------------------------- presenters (a-z)
 

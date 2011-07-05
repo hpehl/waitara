@@ -8,7 +8,6 @@ import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.event.shared.GwtEvent.Type;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.PresenterWidget;
-import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.ContentSlot;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.Proxy;
@@ -30,14 +29,10 @@ import com.gwtplatform.mvp.client.proxy.RevealRootLayoutContentEvent;
  * @version $Date: 2010-12-17 21:37:43 +0100 (Fr, 17 Dez 2010) $ $Revision: 102
  *          $
  */
-public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView, ApplicationPresenter.MyProxy>
+public class ApplicationPresenter extends Presenter<ApplicationView, ApplicationPresenter.MyProxy>
 {
     @ProxyStandard
     public interface MyProxy extends Proxy<ApplicationPresenter>
-    {
-    }
-
-    public interface MyView extends View
     {
     }
 
@@ -56,7 +51,7 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
 
 
     @Inject
-    public ApplicationPresenter(final EventBus eventBus, final MyView view, final MyProxy proxy,
+    public ApplicationPresenter(final EventBus eventBus, final ApplicationView view, final MyProxy proxy,
 
     final NavigationPresenter navigationPresenter)
     {
