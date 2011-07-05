@@ -7,10 +7,9 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.Widget;
-import com.gwtplatform.mvp.client.ViewWithUiHandlers;
+import com.gwtplatform.mvp.client.ViewImpl;
 
-public abstract class AbstractApplicationView extends ViewWithUiHandlers<ApplicationUiHandlers> implements
-        ApplicationPresenter.MyView
+public abstract class AbstractApplicationView extends ViewImpl implements ApplicationPresenter.MyView
 {
     // @formatter:off
     @UiField FlowPanel navigationPanel;

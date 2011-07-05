@@ -1,0 +1,91 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+    <ui:with field="nameTokens" type="biz.accelsis.waitara.client.NameTokens" />
+    <ui:image field="logo" src="../../resources/task_logo.png" />
+    <ui:style>
+        @sprite header {
+            color: white;
+            background-color: #3eb0c7;
+            gwt-image: "logo";
+            padding: 0px 20px;
+            width: auto;
+        }
+        
+        header h1 {
+            padding-top: 5px;
+            padding-left: 50px;
+            border-bottom: none;
+        }
+        
+        .roundedWhiteBox {
+            background-color: white;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px #62635e;
+            -moz-box-shadow: 2px 2px 2px #62635e;
+            -webkit-box-shadow: 2px 2px 2px #62635e;
+        }
+        
+        .mainPanel {
+            margin: 20px 2px 20px 20px;
+        }
+        
+        aside {
+            margin: 20px 30px 20px 0px;
+        }
+        
+        .cockpitPanel,.quickChartPanel {
+            margin-left: 18px;
+        }
+        
+        .quickChartPanel {
+            margin-top: 20px;
+        }
+        
+        footer {
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            color: #62635e;
+            line-height: 20px;
+            padding: 0px 5px;
+            padding: 0px 20px;
+        }
+        
+        footer a,footer a:visited {
+            color: #62635e;
+        }
+        
+        footer a:hover {
+            color: #3d3d3d;
+        }
+    </ui:style>
+
+    <g:DockLayoutPanel unit="PX">
+        <g:north size="48">
+            <g:HTMLPanel>
+                <header>
+                    <h1>Waitara Task Management</h1>
+                </header>
+            </g:HTMLPanel>
+        </g:north>
+        <g:south size="20">
+            <g:HTMLPanel>
+                <footer>
+                    Waitara Task Management &copy; by
+                    <a href="http://www.accelsis.biz">Accelsis Technologies</a>
+                    2011&nbsp;|&nbsp;
+                    <g:InlineHyperlink targetHistoryToken="{nameTokens.help}">Help</g:InlineHyperlink>&nbsp;|&nbsp;
+                    <g:InlineHyperlink targetHistoryToken="{nameTokens.about}">About</g:InlineHyperlink>
+                </footer>
+            </g:HTMLPanel>
+        </g:south>
+        <g:east size="250">
+            <g:FlowPanel ui:field="navigationPanel" />
+        </g:east>
+        <g:center>
+            <g:ScrollPanel ui:field="mainPanel" addStyleNames="{style.mainPanel} {style.roundedWhiteBox}"></g:ScrollPanel>
+        </g:center>
+    </g:DockLayoutPanel>
+</ui:UiBinder> 

@@ -1,7 +1,8 @@
-package biz.accelsis.waitara.client.application;
+package biz.accelsis.waitara.client.application.desktop;
 
 import javax.inject.Inject;
 
+import biz.accelsis.waitara.client.application.AbstractApplicationView;
 import biz.accelsis.waitara.client.resources.Resources;
 
 import com.google.gwt.core.client.GWT;

@@ -6,7 +6,6 @@ import biz.accelsis.waitara.client.navigation.NavigationPresenter;
 
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.event.shared.GwtEvent.Type;
-import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.PresenterWidget;
 import com.gwtplatform.mvp.client.View;
@@ -38,7 +37,7 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
     {
     }
 
-    public interface MyView extends View, HasUiHandlers<ApplicationUiHandlers>
+    public interface MyView extends View
     {
     }
 

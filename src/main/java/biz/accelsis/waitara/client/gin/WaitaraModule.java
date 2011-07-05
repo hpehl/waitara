@@ -5,7 +5,7 @@ import biz.accelsis.waitara.client.WaitaraPlaceManager;
 import biz.accelsis.waitara.client.about.AboutPresenter;
 import biz.accelsis.waitara.client.about.AboutView;
 import biz.accelsis.waitara.client.application.ApplicationPresenter;
-import biz.accelsis.waitara.client.application.ApplicationViewDesktop;
+import biz.accelsis.waitara.client.application.desktop.ApplicationViewDesktop;
 import biz.accelsis.waitara.client.help.HelpPresenter;
 import biz.accelsis.waitara.client.help.HelpView;
 import biz.accelsis.waitara.client.navigation.NavigationPresenter;

@@ -2,7 +2,7 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
 
     <ui:with field="nameTokens" type="biz.accelsis.waitara.client.NameTokens" />
-    <ui:image field="logo" src="../resources/task_logo.png" />
+    <ui:image field="logo" src="../../resources/task_logo.png" />
     <ui:style>
         @sprite header {
             color: white;
