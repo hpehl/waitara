@@ -35,7 +35,7 @@ public class TaskCell extends AbstractSafeHtmlCell<Task>
         if ("click".equals(event.getType()))
         {
             int rowIndex = context.getIndex();
-            tasksTable.onEdit(rowIndex, value);
+            tasksTable.onDetail(rowIndex, value);
         }
     }
 

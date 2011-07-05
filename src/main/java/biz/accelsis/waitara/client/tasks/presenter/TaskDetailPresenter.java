@@ -10,7 +10,6 @@ import biz.accelsis.waitara.client.tasks.model.Task;
 import biz.accelsis.waitara.client.tasks.model.TaskStore;
 
 import com.google.gwt.event.shared.EventBus;
-import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
@@ -25,17 +24,17 @@ import com.gwtplatform.mvp.client.proxy.RevealContentEvent;
  * @version $Date: 2010-12-01 22:35:01 +0100 (Mi, 01. Dez 2010) $ $Revision: 85
  *          $
  */
-public class TasksPresenter extends Presenter<TasksPresenter.MyView, TasksPresenter.MyProxy> implements TaskUiHandlers
+public class TaskDetailPresenter extends Presenter<TaskDetailPresenter.MyView, TaskDetailPresenter.MyProxy>
 {
     @ProxyStandard
-    @NameToken(NameTokens.tasks)
-    public interface MyProxy extends ProxyPlace<TasksPresenter>
+    @NameToken(NameTokens.taskDetail)
+    public interface MyProxy extends ProxyPlace<TaskDetailPresenter>
     {
     }
 
-    public interface MyView extends View, HasUiHandlers<TaskUiHandlers>
+    public interface MyView extends View
     {
-        void updateTasks(List<Task> tasks);
+        void showTask(Task task);
     }
 
     private final PlaceManager placeManager;
@@ -43,12 +42,12 @@ public class TasksPresenter extends Presenter<TasksPresenter.MyView, TasksPresen
 
 
     @Inject
-    public TasksPresenter(EventBus eventBus, MyView view, MyProxy proxy, PlaceManager placeManager, TaskStore taskStore)
+    public TaskDetailPresenter(EventBus eventBus, MyView view, MyProxy proxy, PlaceManager placeManager,
+            TaskStore taskStore)
     {
         super(eventBus, view, proxy);
         this.placeManager = placeManager;
         this.taskStore = taskStore;
-        getView().setUiHandlers(this);
     }
 
 
@@ -60,20 +59,30 @@ public class TasksPresenter extends Presenter<TasksPresenter.MyView, TasksPresen
 
 
     @Override
-    protected void onReset()
+    public void prepareFromRequest(PlaceRequest request)
     {
-        List<Task> tasks = taskStore.load();
-        getView().updateTasks(tasks);
-    }
-
-
-    @Override
-    public void onDetail(Task task)
-    {
-        if (task != null)
+        super.prepareFromRequest(request);
+        String taskId = request.getParameter("id", null);
+        if (taskId != null)
         {
-            PlaceRequest request = new PlaceRequest(NameTokens.taskDetail).with("id", task.getId());
-            placeManager.revealPlace(request);
+            Task taskToShow = null;
+            List<Task> tasks = taskStore.load();
+            for (Task task : tasks)
+            {
+                if (taskId.equals(task.getId()))
+                {
+                    taskToShow = task;
+                    break;
+                }
+            }
+            if (taskToShow != null)
+            {
+                getView().showTask(taskToShow);
+            }
+        }
+        else
+        {
+            placeManager.revealErrorPlace(request.getNameToken());
         }
     }
 }

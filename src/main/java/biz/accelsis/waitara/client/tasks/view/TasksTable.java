@@ -4,14 +4,9 @@ import static com.google.gwt.user.cellview.client.HasKeyboardSelectionPolicy.Key
 
 import java.util.List;
 
-import biz.accelsis.waitara.client.tasks.event.TaskAction;
-import biz.accelsis.waitara.client.tasks.event.TaskActionEvent;
-import biz.accelsis.waitara.client.tasks.event.TaskActionEvent.HasTaskActionHandlers;
-import biz.accelsis.waitara.client.tasks.event.TaskActionEvent.TaskActionHandler;
 import biz.accelsis.waitara.client.tasks.model.Task;
 import biz.accelsis.waitara.client.ui.FormatUtils;
 
-import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.safehtml.shared.SafeHtml;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.google.gwt.safehtml.shared.SafeHtmlUtils;
@@ -21,18 +16,20 @@ import com.google.gwt.user.cellview.client.CellTable;
  * @author $LastChangedBy:$
  * @version $LastChangedRevision:$
  */
-public class TasksTable extends CellTable<Task> implements HasTaskActionHandlers
+public class TasksTable extends CellTable<Task>
 {
     // -------------------------------------------------------- private members
 
+    private final TasksView tasksView;
     private final TasksTableResources resources;
 
 
     // ----------------------------------------------------------- constructors
 
-    public TasksTable(final TasksTableResources resources)
+    public TasksTable(final TasksView tasksView, final TasksTableResources resources)
     {
         super(Integer.MAX_VALUE, resources, new TaskKeyProvider());
+        this.tasksView = tasksView;
         this.resources = resources;
 
         setRowCount(0);
@@ -113,15 +110,8 @@ public class TasksTable extends CellTable<Task> implements HasTaskActionHandlers
 
     // --------------------------------------------------------- event handling
 
-    @Override
-    public HandlerRegistration addTaskActionHandler(TaskActionHandler handler)
+    public void onDetail(int rowIndex, Task task)
     {
-        return addHandler(handler, TaskActionEvent.getType());
-    }
-
-
-    public void onEdit(int rowIndex, Task task)
-    {
-        TaskActionEvent.fire(this, rowIndex, task, TaskAction.Action.EDIT);
+        tasksView.getonDetail(task);
     }
 }

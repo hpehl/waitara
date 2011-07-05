@@ -5,15 +5,16 @@ import java.util.List;
 import javax.inject.Inject;
 
 import biz.accelsis.waitara.client.tasks.model.Task;
+import biz.accelsis.waitara.client.tasks.presenter.TaskUiHandlers;
 import biz.accelsis.waitara.client.tasks.presenter.TasksPresenter;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Widget;
-import com.gwtplatform.mvp.client.ViewImpl;
+import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
-public class TasksView extends ViewImpl implements TasksPresenter.MyView
+public class TasksView extends ViewWithUiHandlers<TaskUiHandlers> implements TasksPresenter.MyView
 {
     // @formatter:off
     interface TasksUi extends UiBinder<Widget, TasksView> {}
@@ -28,7 +29,7 @@ public class TasksView extends ViewImpl implements TasksPresenter.MyView
     @Inject
     public TasksView(final TasksTableResources resources)
     {
-        this.tasksTable = new TasksTable(resources);
+        this.tasksTable = new TasksTable(this, resources);
         widget = uiBinder.createAndBindUi(this);
     }
 

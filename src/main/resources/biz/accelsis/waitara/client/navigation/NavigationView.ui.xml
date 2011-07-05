@@ -32,7 +32,6 @@
     <g:HTMLPanel>
         <nav>
             <g:InlineHyperlink ui:field="tasks" targetHistoryToken="{nameTokens.tasks}">Tasks</g:InlineHyperlink>
-<!--             <g:InlineHyperlink ui:field="newTask" targetHistoryToken="{nameTokens.newTask}">New Task</g:InlineHyperlink> -->
             <g:InlineHyperlink ui:field="settings" targetHistoryToken="{nameTokens.settings}">Settings</g:InlineHyperlink>
             <g:InlineHyperlink ui:field="help" targetHistoryToken="{nameTokens.help}">Help</g:InlineHyperlink>
             <g:InlineHyperlink ui:field="about" targetHistoryToken="{nameTokens.about}" addStyleNames="{style.last}">About</g:InlineHyperlink>

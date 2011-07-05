@@ -21,7 +21,7 @@ package biz.accelsis.waitara.client;
 public class NameTokens
 {
     public static final String tasks = "!tasks";
-    public static final String newTask = "!newTask";
+    public static final String taskDetail = "!taskDetail";
     public static final String settings = "!settings";
     public static final String help = "!help";
     public static final String about = "!about";
@@ -33,9 +33,9 @@ public class NameTokens
     }
 
 
-    public static String newTask()
+    public static String taskDetail()
     {
-        return newTask;
+        return taskDetail;
     }
 
 

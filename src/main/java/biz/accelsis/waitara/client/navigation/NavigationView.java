@@ -23,7 +23,6 @@ public class NavigationView extends ViewImpl implements NavigationPresenter.MyVi
     private static NavigationUi uiBinder = GWT.create(NavigationUi.class);
 
     @UiField InlineHyperlink tasks;
-//    @UiField InlineHyperlink newTask;
     @UiField InlineHyperlink settings;
     @UiField InlineHyperlink help;
     @UiField InlineHyperlink about;
@@ -40,7 +39,7 @@ public class NavigationView extends ViewImpl implements NavigationPresenter.MyVi
         this.resources = resources;
         this.resources.desktop().ensureInjected();
         this.widget = uiBinder.createAndBindUi(this);
-        this.navigationLinks = new InlineHyperlink[] {tasks, /* newTask, */settings, help, about,};
+        this.navigationLinks = new InlineHyperlink[] {tasks, settings, help, about,};
     }
 
 
