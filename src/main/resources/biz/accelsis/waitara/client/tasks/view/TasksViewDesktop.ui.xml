@@ -26,7 +26,7 @@
     <g:HTMLPanel>
         <h1 class="{style.noborder}">Current Tasks</h1>
         <div class="{style.container}">
-            <waitara:TasksTable ui:field="tasksTable" addStyleNames="{style.table}" />
+            <waitara:TasksTable ui:field="tasks" addStyleNames="{style.table}" />
         </div>
     </g:HTMLPanel>
 

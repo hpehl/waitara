@@ -6,7 +6,6 @@ import java.util.List;
 
 import biz.accelsis.waitara.client.tasks.event.TaskAction;
 import biz.accelsis.waitara.client.tasks.event.TaskActionEvent;
-import biz.accelsis.waitara.client.tasks.event.TaskActionEvent.HasTaskActionHandlers;
 import biz.accelsis.waitara.client.tasks.event.TaskActionEvent.TaskActionHandler;
 import biz.accelsis.waitara.client.tasks.model.Task;
 import biz.accelsis.waitara.client.ui.FormatUtils;
@@ -16,7 +15,7 @@ import com.google.gwt.safehtml.shared.SafeHtml;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.google.gwt.user.cellview.client.CellTable;
 
-public class TasksTable extends CellTable<Task> implements HasTaskActionHandlers
+public class TasksTable extends CellTable<Task> implements TaskActionEvent.HasTaskActionHandlers
 {
     // -------------------------------------------------------- private members
 
@@ -91,9 +90,7 @@ public class TasksTable extends CellTable<Task> implements HasTaskActionHandlers
     }
 
 
-    // --------------------------------------------------------- public methods
-
-    public void update(List<Task> tasks)
+    void update(List<Task> tasks)
     {
         if (tasks != null)
         {
@@ -112,7 +109,7 @@ public class TasksTable extends CellTable<Task> implements HasTaskActionHandlers
     }
 
 
-    public void onDetail(int rowIndex, Task task)
+    void onDetail(int rowIndex, Task task)
     {
         TaskActionEvent.fire(this, rowIndex, task, TaskAction.Action.DETAIL);
     }

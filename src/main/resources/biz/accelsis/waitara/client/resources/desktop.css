@@ -19,6 +19,19 @@ article,aside,dialog,figure,footer,header,hgroup,nav,section {
     display: block;
 }
 
+@sprite header {
+    background-color: #3eb0c7;
+    gwt-image: "logo";
+    padding: 0px 20px;
+    width: auto;
+}
+
+header h1 {
+    padding-top: 5px;
+    padding-left: 50px;
+    border-bottom: none;
+}
+
 h1 {
     font-size: 133%;
     font-style: italic;
@@ -70,7 +83,40 @@ img,input,select {
     margin: 0;
 }
 
-.selectedNavigationEntry {
+nav {
+    margin: 50px 30px 20px 0px;
+    border: 1px solid #93CB2B;
+}
+
+nav a {
+    font-size: 12px;
+    color: #93CB2B;
+    background-color: #e9ffbf;
+    display: block;
+    line-height: 20px;
+    text-transform: capitalize;
+    padding: 5px 5px 5px 10px;
+    border-bottom: 1px solid #c4e96e;
+}
+
+nav a:hover,.selectedNavigationEntry {
     color: white;
     background-color: #93CB2B;
+}
+
+footer {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: #62635e;
+    line-height: 20px;
+    padding: 0px 5px;
+    padding: 0px 20px;
+}
+
+footer a,footer a:visited {
+    color: #62635e;
+}
+
+footer a:hover {
+    color: #3d3d3d;
 }

@@ -25,11 +25,22 @@
         <when-type-is class="biz.accelsis.waitara.client.application.ApplicationView" />
     </replace-with>
     <replace-with class="biz.accelsis.waitara.client.application.ApplicationViewTablet">
-        <when-type-is class="biz.accelsis.techtalk.geotracker.client.ApplicationView" />
+        <when-type-is class="biz.accelsis.waitara.client.application.ApplicationView" />
         <when-property-is name="formfactor" value="tablet" />
     </replace-with>
     <replace-with class="biz.accelsis.waitara.client.application.ApplicationViewMobile">
-        <when-type-is class="biz.accelsis.techtalk.geotracker.client.ApplicationView" />
+        <when-type-is class="biz.accelsis.waitara.client.application.ApplicationView" />
+        <when-property-is name="formfactor" value="mobile" />
+    </replace-with>
+    <replace-with class="biz.accelsis.waitara.client.tasks.view.TasksViewDesktop">
+        <when-type-is class="biz.accelsis.waitara.client.tasks.view.TasksView" />
+    </replace-with>
+<!--     <replace-with class="biz.accelsis.waitara.client.tasks.view.TasksViewTablet"> -->
+<!--         <when-type-is class="biz.accelsis.waitara.client.tasks.view.TasksView" /> -->
+<!--         <when-property-is name="formfactor" value="tablet" /> -->
+<!--     </replace-with> -->
+    <replace-with class="biz.accelsis.waitara.client.tasks.view.TasksViewMobile">
+        <when-type-is class="biz.accelsis.waitara.client.tasks.view.TasksView" />
         <when-property-is name="formfactor" value="mobile" />
     </replace-with>
 

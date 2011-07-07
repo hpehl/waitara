@@ -8,11 +8,10 @@ import biz.accelsis.waitara.client.NameTokens;
 import biz.accelsis.waitara.client.application.ApplicationPresenter;
 import biz.accelsis.waitara.client.tasks.model.Task;
 import biz.accelsis.waitara.client.tasks.model.TaskStore;
+import biz.accelsis.waitara.client.tasks.view.TasksView;
 
 import com.google.gwt.event.shared.EventBus;
-import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
-import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
@@ -20,7 +19,7 @@ import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.client.proxy.RevealContentEvent;
 
-public class TasksPresenter extends Presenter<TasksPresenter.MyView, TasksPresenter.MyProxy> implements TaskUiHandlers
+public class TasksPresenter extends Presenter<TasksView, TasksPresenter.MyProxy> implements TaskUiHandlers
 {
     @ProxyStandard
     @NameToken(NameTokens.tasks)
@@ -28,17 +27,13 @@ public class TasksPresenter extends Presenter<TasksPresenter.MyView, TasksPresen
     {
     }
 
-    public interface MyView extends View, HasUiHandlers<TaskUiHandlers>
-    {
-        void updateTasks(List<Task> tasks);
-    }
-
     private final PlaceManager placeManager;
     private final TaskStore taskStore;
 
 
     @Inject
-    public TasksPresenter(EventBus eventBus, MyView view, MyProxy proxy, PlaceManager placeManager, TaskStore taskStore)
+    public TasksPresenter(final EventBus eventBus, final TasksView view, final MyProxy proxy,
+            final PlaceManager placeManager, final TaskStore taskStore)
     {
         super(eventBus, view, proxy);
         this.placeManager = placeManager;

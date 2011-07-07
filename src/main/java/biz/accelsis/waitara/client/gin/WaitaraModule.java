@@ -7,8 +7,6 @@ import biz.accelsis.waitara.client.about.AboutView;
 import biz.accelsis.waitara.client.application.ApplicationPresenter;
 import biz.accelsis.waitara.client.help.HelpPresenter;
 import biz.accelsis.waitara.client.help.HelpView;
-import biz.accelsis.waitara.client.navigation.NavigationPresenter;
-import biz.accelsis.waitara.client.navigation.NavigationView;
 import biz.accelsis.waitara.client.resources.Resources;
 import biz.accelsis.waitara.client.settings.SettingsPresenter;
 import biz.accelsis.waitara.client.settings.SettingsView;
@@ -19,7 +17,6 @@ import biz.accelsis.waitara.client.tasks.model.TaskWriter;
 import biz.accelsis.waitara.client.tasks.presenter.TaskDetailPresenter;
 import biz.accelsis.waitara.client.tasks.presenter.TasksPresenter;
 import biz.accelsis.waitara.client.tasks.view.TaskDetailView;
-import biz.accelsis.waitara.client.tasks.view.TasksView;
 
 import com.google.inject.Singleton;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
@@ -49,9 +46,6 @@ public class WaitaraModule extends AbstractPresenterModule
         bind(TaskFactory.class).in(Singleton.class);
         bind(TaskStore.class).in(Singleton.class);
 
-        // PresenterWidgets (a-z)
-        bindPresenterWidget(NavigationPresenter.class, NavigationPresenter.MyView.class, NavigationView.class);
-
         // Presenters (a-z)
         bindPresenter(AboutPresenter.class, AboutPresenter.MyView.class, AboutView.class, AboutPresenter.MyProxy.class);
         bindPresenter(ApplicationPresenter.class, ApplicationPresenter.MyProxy.class);
@@ -60,6 +54,6 @@ public class WaitaraModule extends AbstractPresenterModule
                 SettingsPresenter.MyProxy.class);
         bindPresenter(TaskDetailPresenter.class, TaskDetailPresenter.MyView.class, TaskDetailView.class,
                 TaskDetailPresenter.MyProxy.class);
-        bindPresenter(TasksPresenter.class, TasksPresenter.MyView.class, TasksView.class, TasksPresenter.MyProxy.class);
+        bindPresenter(TasksPresenter.class, TasksPresenter.MyProxy.class);
     }
 }

@@ -1,12 +1,11 @@
 package biz.accelsis.waitara.client.application;
 
 import biz.accelsis.waitara.client.resources.Resources;
-import biz.accelsis.waitara.client.ui.UiUtils;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.InlineHyperlink;
 import com.google.gwt.user.client.ui.Widget;
 
 public class ApplicationViewDesktop extends AbstractApplicationView
@@ -15,20 +14,19 @@ public class ApplicationViewDesktop extends AbstractApplicationView
     interface ApplicationUi extends UiBinder<Widget, ApplicationViewDesktop> {}
     private static ApplicationUi uiBinder = GWT.create(ApplicationUi.class);
 
-    @UiField FlowPanel navigationPanel;
+    @UiField InlineHyperlink tasks;
+    @UiField InlineHyperlink settings;
+    @UiField InlineHyperlink help;
+    @UiField InlineHyperlink about;
     // @formatter:on
 
-    @Override
-    public void setInSlot(Object slot, Widget content)
+    final InlineHyperlink[] navigationLinks;
+
+
+    public ApplicationViewDesktop()
     {
-        if (slot == ApplicationPresenter.SLOT_Navigation)
-        {
-            UiUtils.setContent(navigationPanel, content);
-        }
-        else
-        {
-            super.setInSlot(slot, content);
-        }
+        super();
+        this.navigationLinks = new InlineHyperlink[] {tasks, settings, help, about,};
     }
 
 
@@ -44,5 +42,28 @@ public class ApplicationViewDesktop extends AbstractApplicationView
     protected Widget initUi()
     {
         return uiBinder.createAndBindUi(this);
+    }
+
+
+    @Override
+    public void highlight(String token)
+    {
+        if (token != null)
+        {
+            for (InlineHyperlink link : navigationLinks)
+            {
+                if (link != null)
+                {
+                    if (token.equals(link.getTargetHistoryToken()))
+                    {
+                        link.addStyleName(resources.desktop().selectedNavigationEntry());
+                    }
+                    else
+                    {
+                        link.removeStyleName(resources.desktop().selectedNavigationEntry());
+                    }
+                }
+            }
+        }
     }
 }
