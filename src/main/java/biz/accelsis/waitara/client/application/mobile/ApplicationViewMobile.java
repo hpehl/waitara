@@ -2,6 +2,7 @@ package biz.accelsis.waitara.client.application.mobile;
 
 import biz.accelsis.waitara.client.application.AbstractApplicationView;
 import biz.accelsis.waitara.client.resources.Resources;
+import biz.accelsis.waitara.client.tasks.model.Task;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.HeadingElement;
@@ -32,5 +33,23 @@ public class ApplicationViewMobile extends AbstractApplicationView
     protected Widget initUi()
     {
         return uiBinder.createAndBindUi(this);
+    }
+
+
+    @Override
+    public void taskList()
+    {
+        header.setInnerText("Waitara Task Management");
+        tasks.removeStyleName(resources.mobile().visible());
+        tasks.addStyleName(resources.mobile().hidden());
+    }
+
+
+    @Override
+    public void taskDetail(Task task)
+    {
+        header.setInnerText(task.getName());
+        tasks.removeStyleName(resources.mobile().hidden());
+        tasks.addStyleName(resources.mobile().visible());
     }
 }

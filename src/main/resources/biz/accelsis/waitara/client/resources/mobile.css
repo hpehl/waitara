@@ -8,3 +8,11 @@ body {
     overflow: hidden;
     -webkit-text-size-adjust: none;
 }
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: inline;
+}

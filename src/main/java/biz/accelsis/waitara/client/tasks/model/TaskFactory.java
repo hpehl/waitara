@@ -26,7 +26,7 @@ public class TaskFactory
         tasks.add(t);
 
         t = new Task();
-        t.setName("Buy birthday present");
+        t.setName("Buy birthday gift");
         t.setDescription("What about a photo book?");
         t.setDueDate(new Date(111, 10, 23));
         t.setFinished(false);

@@ -2,6 +2,11 @@ package biz.accelsis.waitara.client.application;
 
 import javax.inject.Inject;
 
+import biz.accelsis.waitara.client.NameTokens;
+import biz.accelsis.waitara.client.tasks.event.TaskAction.Action;
+import biz.accelsis.waitara.client.tasks.event.TaskActionEvent;
+import biz.accelsis.waitara.client.tasks.event.TaskActionEvent.TaskActionHandler;
+
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.event.shared.GwtEvent.Type;
 import com.gwtplatform.mvp.client.Presenter;
@@ -13,7 +18,8 @@ import com.gwtplatform.mvp.client.proxy.Proxy;
 import com.gwtplatform.mvp.client.proxy.RevealContentHandler;
 import com.gwtplatform.mvp.client.proxy.RevealRootLayoutContentEvent;
 
-public class ApplicationPresenter extends Presenter<ApplicationView, ApplicationPresenter.MyProxy>
+public class ApplicationPresenter extends Presenter<ApplicationView, ApplicationPresenter.MyProxy> implements
+        TaskActionHandler
 {
     @ProxyStandard
     public interface MyProxy extends Proxy<ApplicationPresenter>
@@ -32,6 +38,7 @@ public class ApplicationPresenter extends Presenter<ApplicationView, Application
     {
         super(eventBus, view, proxy);
         this.placeManager = placeManager;
+        getEventBus().addHandler(TaskActionEvent.getType(), this);
     }
 
 
@@ -48,5 +55,19 @@ public class ApplicationPresenter extends Presenter<ApplicationView, Application
         PlaceRequest request = placeManager.getCurrentPlaceRequest();
         String token = request.getNameToken();
         getView().highlight(token);
+        if (NameTokens.tasks.equals(token))
+        {
+            getView().taskList();
+        }
+    }
+
+
+    @Override
+    public void onTaskAction(TaskActionEvent event)
+    {
+        if (event.getAction() == Action.DETAIL)
+        {
+            getView().taskDetail(event.getTask());
+        }
     }
 }

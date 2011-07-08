@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import biz.accelsis.waitara.client.Waitara;
 import biz.accelsis.waitara.client.tasks.event.TaskAction;
 import biz.accelsis.waitara.client.tasks.event.TaskActionEvent;
 import biz.accelsis.waitara.client.tasks.event.TaskActionEvent.TaskActionHandler;
@@ -13,6 +14,7 @@ import com.google.gwt.dom.client.AnchorElement;
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.LIElement;
 import com.google.gwt.dom.client.UListElement;
+import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.Element;
@@ -22,12 +24,14 @@ import com.google.gwt.user.client.ui.Widget;
 public class TaskList extends Widget implements TaskActionEvent.HasTaskActionHandlers
 {
     private final UListElement ul;
+    private final EventBus eventBus;
     private final Map<AnchorElement, Task> links;
 
 
     public TaskList()
     {
         ul = Document.get().createULElement();
+        eventBus = Waitara.ginjector.getEventBus();
         links = new HashMap<AnchorElement, Task>();
         setElement(ul);
         setStyleName("waitara-tasklist");
@@ -79,6 +83,7 @@ public class TaskList extends Widget implements TaskActionEvent.HasTaskActionHan
                 if (task != null)
                 {
                     TaskActionEvent.fire(this, task, TaskAction.Action.DETAIL);
+                    eventBus.fireEvent(new TaskActionEvent(task, TaskAction.Action.DETAIL));
                 }
             }
         }

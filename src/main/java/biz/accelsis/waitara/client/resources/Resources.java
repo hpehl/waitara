@@ -30,5 +30,15 @@ public interface Resources extends ClientBundle
 
 
     @Source("mobile.css")
-    CssResource mobile();
+    MobileResource mobile();
+
+
+    public interface MobileResource extends CssResource
+    {
+        @ClassName("hidden")
+        String hidden();
+        
+        @ClassName("visible")
+        String visible();
+    }
 }

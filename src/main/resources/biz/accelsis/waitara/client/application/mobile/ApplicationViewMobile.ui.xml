@@ -12,9 +12,9 @@
             font-size: 20px;
             font-weight: bold;
             gwt-image: "toolbar";
+            height: auto;
             line-height: 20px;
             margin: 0;
-            /*     max-width: 160px; */
             overflow: hidden;
             padding: 10px;
             text-align: center;
@@ -36,7 +36,7 @@
             position: absolute;
             text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0;
             text-decoration: none;
-            top: 6px;
+            top: 7px;
             -webkit-border-image: url(backButton.png) 0 8 0 14;
         }
     </ui:style>

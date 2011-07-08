@@ -21,7 +21,6 @@ public class TaskDetailViewMobile extends ViewImpl implements TaskDetailView
     interface TaskDetailUi extends UiBinder<Widget, TaskDetailViewMobile> {}
     private static TaskDetailUi uiBinder = GWT.create(TaskDetailUi.class);
 
-    @UiField LIElement name;
     @UiField LIElement description;
     @UiField LIElement dueDate;
     @UiField LIElement finished;
@@ -49,8 +48,7 @@ public class TaskDetailViewMobile extends ViewImpl implements TaskDetailView
     {
         if (task != null)
         {
-            name.setInnerText(task.getName());
-            description.setInnerText(task.getDescription());
+            description.setInnerText("Description: " + task.getDescription());
             if (task.getDueDate() != null)
             {
                 dueDate.setInnerText("Due date: " + FormatUtils.date(task.getDueDate()));
@@ -65,7 +63,6 @@ public class TaskDetailViewMobile extends ViewImpl implements TaskDetailView
         }
         else
         {
-            name.setInnerText("No name");
             description.setInnerText("No description");
             dueDate.setInnerText("No due date");
             SafeHtml safeHtml = new SafeHtmlBuilder().appendHtmlConstant("&#9744;").toSafeHtml();
