@@ -8,7 +8,7 @@ import biz.accelsis.waitara.client.tasks.presenter.TaskUiHandlers;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.View;
 
-public interface TasksView extends View, HasUiHandlers<TaskUiHandlers>
+public interface TaskListView extends View, HasUiHandlers<TaskUiHandlers>
 {
     void updateTasks(List<Task> tasks);
 }

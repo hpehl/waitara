@@ -3,20 +3,13 @@ package biz.accelsis.waitara.client.resources;
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
 import com.google.gwt.resources.client.ImageResource;
-import com.google.gwt.resources.client.ImageResource.ImageOptions;
-import com.google.gwt.resources.client.ImageResource.RepeatStyle;
 
 //@formatter:off
 public interface Resources extends ClientBundle
 {
     // ----------------------------------------------------------------- images
 
-    ImageResource arrow();
-    ImageResource backButton();
-    ImageResource button();
     ImageResource logo();
-    @ImageOptions(repeatStyle = RepeatStyle.Horizontal) 
-    ImageResource toolbar();
 
 
     // -------------------------------------------------------------------- CSS

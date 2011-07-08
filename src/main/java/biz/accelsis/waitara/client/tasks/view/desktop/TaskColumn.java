@@ -1,4 +1,4 @@
-package biz.accelsis.waitara.client.tasks.view;
+package biz.accelsis.waitara.client.tasks.view.desktop;
 
 import biz.accelsis.waitara.client.tasks.model.Task;
 
@@ -14,7 +14,7 @@ public class TaskColumn extends Column<Task, Task>
     }
 
 
-    public TaskColumn(TasksTable tasksTable, SafeHtmlRenderer<Task> renderer)
+    public TaskColumn(TaskTable tasksTable, SafeHtmlRenderer<Task> renderer)
     {
         super(new TaskCell(tasksTable, renderer));
     }

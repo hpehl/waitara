@@ -1,4 +1,4 @@
-package biz.accelsis.waitara.client.tasks.view;
+package biz.accelsis.waitara.client.tasks.view.desktop;
 
 import biz.accelsis.waitara.client.tasks.model.Task;
 

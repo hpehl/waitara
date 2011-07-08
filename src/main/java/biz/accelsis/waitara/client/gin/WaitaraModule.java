@@ -15,8 +15,7 @@ import biz.accelsis.waitara.client.tasks.model.TaskReader;
 import biz.accelsis.waitara.client.tasks.model.TaskStore;
 import biz.accelsis.waitara.client.tasks.model.TaskWriter;
 import biz.accelsis.waitara.client.tasks.presenter.TaskDetailPresenter;
-import biz.accelsis.waitara.client.tasks.presenter.TasksPresenter;
-import biz.accelsis.waitara.client.tasks.view.TaskDetailView;
+import biz.accelsis.waitara.client.tasks.presenter.TaskListPresenter;
 
 import com.google.inject.Singleton;
 import com.gwtplatform.mvp.client.gin.AbstractPresenterModule;
@@ -52,8 +51,7 @@ public class WaitaraModule extends AbstractPresenterModule
         bindPresenter(HelpPresenter.class, HelpPresenter.MyView.class, HelpView.class, HelpPresenter.MyProxy.class);
         bindPresenter(SettingsPresenter.class, SettingsPresenter.MyView.class, SettingsView.class,
                 SettingsPresenter.MyProxy.class);
-        bindPresenter(TaskDetailPresenter.class, TaskDetailPresenter.MyView.class, TaskDetailView.class,
-                TaskDetailPresenter.MyProxy.class);
-        bindPresenter(TasksPresenter.class, TasksPresenter.MyProxy.class);
+        bindPresenter(TaskDetailPresenter.class, TaskDetailPresenter.MyProxy.class);
+        bindPresenter(TaskListPresenter.class, TaskListPresenter.MyProxy.class);
     }
 }

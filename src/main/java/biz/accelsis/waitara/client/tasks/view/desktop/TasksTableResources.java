@@ -1,4 +1,4 @@
-package biz.accelsis.waitara.client.tasks.view;
+package biz.accelsis.waitara.client.tasks.view.desktop;
 
 import com.google.gwt.user.cellview.client.CellTable;
 

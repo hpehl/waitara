@@ -1,4 +1,4 @@
-package biz.accelsis.waitara.client.tasks.view;
+package biz.accelsis.waitara.client.tasks.view.desktop;
 
 import biz.accelsis.waitara.client.tasks.model.Task;
 
@@ -13,10 +13,10 @@ import com.google.gwt.text.shared.SafeHtmlRenderer;
 
 public class TaskCell extends AbstractSafeHtmlCell<Task>
 {
-    private final TasksTable tasksTable;
+    private final TaskTable tasksTable;
 
 
-    public TaskCell(TasksTable tasksTable, SafeHtmlRenderer<Task> renderer)
+    public TaskCell(TaskTable tasksTable, SafeHtmlRenderer<Task> renderer)
     {
         super(renderer, "click");
         this.tasksTable = tasksTable;
@@ -30,8 +30,7 @@ public class TaskCell extends AbstractSafeHtmlCell<Task>
         super.onBrowserEvent(context, parent, value, event, valueUpdater);
         if ("click".equals(event.getType()))
         {
-            int rowIndex = context.getIndex();
-            tasksTable.onDetail(rowIndex, value);
+            tasksTable.onDetail(value);
         }
     }
 

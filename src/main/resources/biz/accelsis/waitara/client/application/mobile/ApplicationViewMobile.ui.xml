@@ -1,0 +1,49 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+    <ui:with field="nameTokens" type="biz.accelsis.waitara.client.NameTokens" />
+    <ui:image field="toolbar" repeatStyle="Horizontal" src="../../resources/toolbar.png" />
+    <ui:style>
+        @sprite .toolbar {
+            border-bottom: 1px solid #666;
+            box-sizing: border-box;
+            color: white;
+            display: block;
+            font-size: 20px;
+            font-weight: bold;
+            gwt-image: "toolbar";
+            line-height: 20px;
+            margin: 0;
+            /*     max-width: 160px; */
+            overflow: hidden;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            text-overflow: ellipsis;
+            text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0;
+            white-space: nowrap;
+        }
+        
+        .tasks {
+            border-width: 0 8px 0 14px;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            height: 28px;
+            left: 6px;
+            line-height: 28px;
+            padding: 0;
+            position: absolute;
+            text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0;
+            text-decoration: none;
+            top: 6px;
+            -webkit-border-image: url(backButton.png) 0 8 0 14;
+        }
+    </ui:style>
+
+    <g:HTMLPanel>
+        <h1 ui:field="header" class="{style.toolbar}">Waitara Task Management</h1>
+        <g:InlineHyperlink ui:field="tasks" targetHistoryToken="{nameTokens.tasks}" addStyleNames="{style.tasks}">Tasks</g:InlineHyperlink>
+        <g:HTMLPanel ui:field="mainPanel"></g:HTMLPanel>
+    </g:HTMLPanel>
+</ui:UiBinder> 

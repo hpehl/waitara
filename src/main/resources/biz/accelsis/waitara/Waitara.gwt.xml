@@ -21,26 +21,37 @@
     <entry-point class="biz.accelsis.waitara.client.Waitara" />
 
     <!-- Device dependent settings -->
-    <replace-with class="biz.accelsis.waitara.client.application.ApplicationViewDesktop">
+    <replace-with class="biz.accelsis.waitara.client.application.desktop.ApplicationViewDesktop">
         <when-type-is class="biz.accelsis.waitara.client.application.ApplicationView" />
     </replace-with>
-    <replace-with class="biz.accelsis.waitara.client.application.ApplicationViewTablet">
+    <replace-with class="biz.accelsis.waitara.client.application.tablet.ApplicationViewTablet">
         <when-type-is class="biz.accelsis.waitara.client.application.ApplicationView" />
         <when-property-is name="formfactor" value="tablet" />
     </replace-with>
-    <replace-with class="biz.accelsis.waitara.client.application.ApplicationViewMobile">
+    <replace-with class="biz.accelsis.waitara.client.application.mobile.ApplicationViewMobile">
         <when-type-is class="biz.accelsis.waitara.client.application.ApplicationView" />
         <when-property-is name="formfactor" value="mobile" />
     </replace-with>
-    <replace-with class="biz.accelsis.waitara.client.tasks.view.TasksViewDesktop">
-        <when-type-is class="biz.accelsis.waitara.client.tasks.view.TasksView" />
+    <replace-with class="biz.accelsis.waitara.client.tasks.view.desktop.TaskListViewDesktop">
+        <when-type-is class="biz.accelsis.waitara.client.tasks.view.TaskListView" />
     </replace-with>
-<!--     <replace-with class="biz.accelsis.waitara.client.tasks.view.TasksViewTablet"> -->
-<!--         <when-type-is class="biz.accelsis.waitara.client.tasks.view.TasksView" /> -->
+<!--     <replace-with class="biz.accelsis.waitara.client.tasks.view.tablet.TaskListViewTablet"> -->
+<!--         <when-type-is class="biz.accelsis.waitara.client.tasks.view.TaskListView" /> -->
 <!--         <when-property-is name="formfactor" value="tablet" /> -->
 <!--     </replace-with> -->
-    <replace-with class="biz.accelsis.waitara.client.tasks.view.TasksViewMobile">
-        <when-type-is class="biz.accelsis.waitara.client.tasks.view.TasksView" />
+    <replace-with class="biz.accelsis.waitara.client.tasks.view.mobile.TaskListViewMobile">
+        <when-type-is class="biz.accelsis.waitara.client.tasks.view.TaskListView" />
+        <when-property-is name="formfactor" value="mobile" />
+    </replace-with>
+    <replace-with class="biz.accelsis.waitara.client.tasks.view.desktop.TaskDetailViewDesktop">
+        <when-type-is class="biz.accelsis.waitara.client.tasks.view.TaskDetailView" />
+    </replace-with>
+<!--     <replace-with class="biz.accelsis.waitara.client.tasks.view.tablet.TaskDetailViewTablet"> -->
+<!--         <when-type-is class="biz.accelsis.waitara.client.tasks.view.TaskDetailView" /> -->
+<!--         <when-property-is name="formfactor" value="tablet" /> -->
+<!--     </replace-with> -->
+    <replace-with class="biz.accelsis.waitara.client.tasks.view.mobile.TaskDetailViewMobile">
+        <when-type-is class="biz.accelsis.waitara.client.tasks.view.TaskDetailView" />
         <when-property-is name="formfactor" value="mobile" />
     </replace-with>
 

@@ -16,11 +16,8 @@ public class TaskAction
     }
 
     @Order(1)
-    int rowIndex;
-
-    @Order(2)
     Task task;
 
-    @Order(3)
+    @Order(2)
     Action action;
 }

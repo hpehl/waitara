@@ -8,18 +8,18 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
-public abstract class AbstractTasksView extends ViewWithUiHandlers<TaskUiHandlers> implements TasksView
+public abstract class AbstractTaskListView extends ViewWithUiHandlers<TaskUiHandlers> implements TaskListView
 {
-    final Widget widget;
+    protected final Widget widget;
 
 
-    public AbstractTasksView()
+    public AbstractTaskListView()
     {
         this.widget = initUi();
     }
 
 
-    abstract Widget initUi();
+    protected abstract Widget initUi();
 
 
     @Override

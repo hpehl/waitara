@@ -8,7 +8,7 @@ import biz.accelsis.waitara.client.NameTokens;
 import biz.accelsis.waitara.client.application.ApplicationPresenter;
 import biz.accelsis.waitara.client.tasks.model.Task;
 import biz.accelsis.waitara.client.tasks.model.TaskStore;
-import biz.accelsis.waitara.client.tasks.view.TasksView;
+import biz.accelsis.waitara.client.tasks.view.TaskListView;
 
 import com.google.gwt.event.shared.EventBus;
 import com.gwtplatform.mvp.client.Presenter;
@@ -19,11 +19,11 @@ import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.client.proxy.RevealContentEvent;
 
-public class TasksPresenter extends Presenter<TasksView, TasksPresenter.MyProxy> implements TaskUiHandlers
+public class TaskListPresenter extends Presenter<TaskListView, TaskListPresenter.MyProxy> implements TaskUiHandlers
 {
     @ProxyStandard
     @NameToken(NameTokens.tasks)
-    public interface MyProxy extends ProxyPlace<TasksPresenter>
+    public interface MyProxy extends ProxyPlace<TaskListPresenter>
     {
     }
 
@@ -32,7 +32,7 @@ public class TasksPresenter extends Presenter<TasksView, TasksPresenter.MyProxy>
 
 
     @Inject
-    public TasksPresenter(final EventBus eventBus, final TasksView view, final MyProxy proxy,
+    public TaskListPresenter(final EventBus eventBus, final TaskListView view, final MyProxy proxy,
             final PlaceManager placeManager, final TaskStore taskStore)
     {
         super(eventBus, view, proxy);

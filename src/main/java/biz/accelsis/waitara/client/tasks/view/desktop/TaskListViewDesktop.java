@@ -1,28 +1,29 @@
-package biz.accelsis.waitara.client.tasks.view;
+package biz.accelsis.waitara.client.tasks.view.desktop;
 
 import java.util.List;
 
 import biz.accelsis.waitara.client.Waitara;
 import biz.accelsis.waitara.client.tasks.model.Task;
+import biz.accelsis.waitara.client.tasks.view.AbstractTaskListView;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Widget;
 
-public class TasksViewDesktop extends AbstractTasksView
+public class TaskListViewDesktop extends AbstractTaskListView
 {
     // @formatter:off
-    interface TasksUi extends UiBinder<Widget, TasksViewDesktop> {}
+    interface TasksUi extends UiBinder<Widget, TaskListViewDesktop> {}
     private static TasksUi uiBinder = GWT.create(TasksUi.class);
     
-    @UiField(provided = true) TasksTable tasks;
+    @UiField(provided = true) TaskTable tasks;
     // @formatter:on
 
     @Override
     protected Widget initUi()
     {
-        tasks = new TasksTable(Waitara.ginjector.getTasksTableResources());
+        tasks = new TaskTable(Waitara.ginjector.getTasksTableResources());
         return uiBinder.createAndBindUi(this);
     }
 

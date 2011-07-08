@@ -1,4 +1,4 @@
-package biz.accelsis.waitara.client.tasks.view;
+package biz.accelsis.waitara.client.tasks.view.desktop;
 
 import static com.google.gwt.user.cellview.client.HasKeyboardSelectionPolicy.KeyboardSelectionPolicy.DISABLED;
 
@@ -15,7 +15,7 @@ import com.google.gwt.safehtml.shared.SafeHtml;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.google.gwt.user.cellview.client.CellTable;
 
-public class TasksTable extends CellTable<Task> implements TaskActionEvent.HasTaskActionHandlers
+public class TaskTable extends CellTable<Task> implements TaskActionEvent.HasTaskActionHandlers
 {
     // -------------------------------------------------------- private members
 
@@ -24,7 +24,7 @@ public class TasksTable extends CellTable<Task> implements TaskActionEvent.HasTa
 
     // ----------------------------------------------------------- constructors
 
-    public TasksTable(final TasksTableResources resources)
+    public TaskTable(final TasksTableResources resources)
     {
         super(Integer.MAX_VALUE, resources, new TaskKeyProvider());
         this.resources = resources;
@@ -109,8 +109,8 @@ public class TasksTable extends CellTable<Task> implements TaskActionEvent.HasTa
     }
 
 
-    void onDetail(int rowIndex, Task task)
+    void onDetail(Task task)
     {
-        TaskActionEvent.fire(this, rowIndex, task, TaskAction.Action.DETAIL);
+        TaskActionEvent.fire(this, task, TaskAction.Action.DETAIL);
     }
 }

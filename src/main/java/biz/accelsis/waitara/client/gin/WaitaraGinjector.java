@@ -6,8 +6,8 @@ import biz.accelsis.waitara.client.help.HelpPresenter;
 import biz.accelsis.waitara.client.resources.Resources;
 import biz.accelsis.waitara.client.settings.SettingsPresenter;
 import biz.accelsis.waitara.client.tasks.presenter.TaskDetailPresenter;
-import biz.accelsis.waitara.client.tasks.presenter.TasksPresenter;
-import biz.accelsis.waitara.client.tasks.view.TasksTableResources;
+import biz.accelsis.waitara.client.tasks.presenter.TaskListPresenter;
+import biz.accelsis.waitara.client.tasks.view.desktop.TasksTableResources;
 
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.inject.client.AsyncProvider;
@@ -34,5 +34,5 @@ public interface WaitaraGinjector extends Ginjector
     AsyncProvider<HelpPresenter> getHelpPresenter();
     AsyncProvider<SettingsPresenter> getSettingsPresenter();
     Provider<TaskDetailPresenter> getTaskDeProvider();
-    Provider<TasksPresenter> getTasksPresenter();
+    Provider<TaskListPresenter> getTasksPresenter();
 }

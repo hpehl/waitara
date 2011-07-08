@@ -12,9 +12,9 @@ import com.gwtplatform.mvp.client.ViewImpl;
 public abstract class AbstractApplicationView extends ViewImpl implements ApplicationView
 {
     @UiField
-    Panel mainPanel;
-    final Widget widget;
-    final Resources resources;
+    public Panel mainPanel;
+    protected final Widget widget;
+    protected final Resources resources;
 
 
     public AbstractApplicationView()
@@ -25,10 +25,10 @@ public abstract class AbstractApplicationView extends ViewImpl implements Applic
     }
 
 
-    abstract void injectCss(Resources resources);
+    protected abstract void injectCss(Resources resources);
 
 
-    abstract Widget initUi();
+    protected abstract Widget initUi();
 
 
     @Override

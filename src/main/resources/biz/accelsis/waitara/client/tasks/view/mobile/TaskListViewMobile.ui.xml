@@ -1,0 +1,46 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"
+    xmlns:waitara="urn:import:biz.accelsis.waitara.client.tasks.view.mobile">
+
+    <ui:image field="arrow" src="../../../resources/arrow.png" />
+    <ui:style>
+        ul.tasks {
+            display: block;
+            left: 0;
+            margin: 0;
+            min-height: 418px;
+            padding: 0;
+            position: absolute;
+            top: 41px;
+            width: 100%;
+        }
+        
+        @sprite ul.tasks>li {
+            background-color: white;
+            background-position: right center;
+            border-bottom: 1px solid #E0E0E0;
+            font-size: 20px;
+            font-weight: bold;
+            gwt-image: "arrow";
+            height: auto;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        
+        ul.tasks>li>a {
+            color: inherit;
+            cursor: pointer;
+            display: block;
+            padding: 8px 32px 8px 8px;
+            text-decoration: none;
+        }
+    </ui:style>
+
+    <g:HTMLPanel>
+        <!-- Creates an ul with one li per task -->
+        <waitara:TaskList ui:field="tasks" addStyleNames="{style.tasks}" />
+    </g:HTMLPanel>
+
+</ui:UiBinder> 
