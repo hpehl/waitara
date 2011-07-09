@@ -9,7 +9,7 @@ body {
     -webkit-text-size-adjust: none;
 }
 
-@sprite header > h1 {
+@sprite header>h1 {
     border-bottom: 1px solid #666;
     box-sizing: border-box;
     color: white;
@@ -26,5 +26,13 @@ body {
     text-decoration: none;
     text-overflow: ellipsis;
     text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0;
-    white-space: nowrap;
+    width: 100% white-space:  nowrap;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: inline;
 }

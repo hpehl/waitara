@@ -4,27 +4,7 @@
     <ui:with field="nameTokens" type="biz.accelsis.waitara.client.NameTokens" />
     <ui:image field="headerBackground" repeatStyle="Horizontal" src="../../resources/header.png" />
     <ui:style>
-        @sprite .toolbar {
-            border-bottom: 1px solid #666;
-            box-sizing: border-box;
-            color: white;
-            display: block;
-            font-size: 20px;
-            font-weight: bold;
-            gwt-image: "headerBackground";
-            height: auto;
-            line-height: 20px;
-            margin: 0;
-            overflow: hidden;
-            padding: 10px;
-            text-align: center;
-            text-decoration: none;
-            text-overflow: ellipsis;
-            text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0;
-            white-space: nowrap;
-        }
-        
-        .tasks {
+        .backToTaskList {
             border-width: 0 8px 0 14px;
             color: white;
             font-size: 12px;
@@ -41,9 +21,18 @@
         }
     </ui:style>
 
-    <g:HTMLPanel>
-        <h1 ui:field="header" class="{style.toolbar}">Waitara Task Management</h1>
-        <g:InlineHyperlink ui:field="tasks" targetHistoryToken="{nameTokens.tasks}" addStyleNames="{style.tasks}">Tasks</g:InlineHyperlink>
-        <g:HTMLPanel ui:field="mainPanel"></g:HTMLPanel>
-    </g:HTMLPanel>
+    <g:DockLayoutPanel unit="PX">
+        <g:north size="41">
+            <g:HTMLPanel>
+                <header>
+                    <h1 ui:field="header">Waitara Task Management</h1>
+                    <g:InlineHyperlink ui:field="backToTaskList" targetHistoryToken="{nameTokens.tasks}"
+                        addStyleNames="{style.backToTaskList}">Tasks</g:InlineHyperlink>
+                </header>
+            </g:HTMLPanel>
+        </g:north>
+        <g:center>
+            <g:SimpleLayoutPanel ui:field="mainPanel"></g:SimpleLayoutPanel>
+        </g:center>
+    </g:DockLayoutPanel>
 </ui:UiBinder> 

@@ -1,7 +1,5 @@
 package biz.accelsis.waitara.client.tasks.view;
 
-import javax.inject.Inject;
-
 import biz.accelsis.waitara.client.tasks.model.Task;
 import biz.accelsis.waitara.client.ui.FormatUtils;
 
@@ -14,9 +12,8 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.InlineLabel;
 import com.google.gwt.user.client.ui.Widget;
-import com.gwtplatform.mvp.client.ViewImpl;
 
-public class TaskDetailViewDesktop extends ViewImpl implements TaskDetailView
+public class TaskDetailViewDesktop extends AbstractTaskDetailView
 {
     // @formatter:off
     interface TaskDetailUi extends UiBinder<Widget, TaskDetailViewDesktop> {}
@@ -29,20 +26,10 @@ public class TaskDetailViewDesktop extends ViewImpl implements TaskDetailView
     @UiField HTML finished;
     // @formatter:on
 
-    private final Widget widget;
-
-
-    @Inject
-    public TaskDetailViewDesktop()
-    {
-        widget = uiBinder.createAndBindUi(this);
-    }
-
-
     @Override
-    public Widget asWidget()
+    protected Widget initUi()
     {
-        return widget;
+        return uiBinder.createAndBindUi(this);
     }
 
 

@@ -19,13 +19,13 @@ public class ApplicationViewMobile extends AbstractApplicationView
     private static ApplicationUi uiBinder = GWT.create(ApplicationUi.class);
     
     @UiField HeadingElement header;
-    @UiField InlineHyperlink tasks;
+    @UiField InlineHyperlink backToTaskList;
     // @formatter:on
 
     @Override
     protected void injectCss(Resources resources)
     {
-        resources.mobile().ensureInjected();
+        resources.mobileAndTablet().ensureInjected();
 
     }
 
@@ -41,8 +41,8 @@ public class ApplicationViewMobile extends AbstractApplicationView
     public void taskList(List<Task> tasks)
     {
         header.setInnerText("Waitara Task Management");
-        this.tasks.removeStyleName(resources.mobile().visible());
-        this.tasks.addStyleName(resources.mobile().hidden());
+        backToTaskList.removeStyleName(resources.mobileAndTablet().visible());
+        backToTaskList.addStyleName(resources.mobileAndTablet().hidden());
     }
 
 
@@ -50,7 +50,7 @@ public class ApplicationViewMobile extends AbstractApplicationView
     public void taskDetail(Task task)
     {
         header.setInnerText(task.getName());
-        tasks.removeStyleName(resources.mobile().hidden());
-        tasks.addStyleName(resources.mobile().visible());
+        backToTaskList.removeStyleName(resources.mobileAndTablet().hidden());
+        backToTaskList.addStyleName(resources.mobileAndTablet().visible());
     }
 }

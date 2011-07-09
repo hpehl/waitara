@@ -35,10 +35,10 @@
     <replace-with class="biz.accelsis.waitara.client.tasks.view.TaskListViewDesktop">
         <when-type-is class="biz.accelsis.waitara.client.tasks.view.TaskListView" />
     </replace-with>
-<!--     <replace-with class="biz.accelsis.waitara.client.tasks.view.tablet.TaskListViewTablet"> -->
-<!--         <when-type-is class="biz.accelsis.waitara.client.tasks.view.TaskListView" /> -->
-<!--         <when-property-is name="formfactor" value="tablet" /> -->
-<!--     </replace-with> -->
+    <replace-with class="biz.accelsis.waitara.client.tasks.view.TaskListViewTablet">
+        <when-type-is class="biz.accelsis.waitara.client.tasks.view.TaskListView" />
+        <when-property-is name="formfactor" value="tablet" />
+    </replace-with>
     <replace-with class="biz.accelsis.waitara.client.tasks.view.TaskListViewMobile">
         <when-type-is class="biz.accelsis.waitara.client.tasks.view.TaskListView" />
         <when-property-is name="formfactor" value="mobile" />
@@ -46,11 +46,11 @@
     <replace-with class="biz.accelsis.waitara.client.tasks.view.TaskDetailViewDesktop">
         <when-type-is class="biz.accelsis.waitara.client.tasks.view.TaskDetailView" />
     </replace-with>
-<!--     <replace-with class="biz.accelsis.waitara.client.tasks.view.tablet.TaskDetailViewTablet"> -->
-<!--         <when-type-is class="biz.accelsis.waitara.client.tasks.view.TaskDetailView" /> -->
-<!--         <when-property-is name="formfactor" value="tablet" /> -->
-<!--     </replace-with> -->
-    <replace-with class="biz.accelsis.waitara.client.tasks.view.TaskDetailViewMobile">
+    <replace-with class="biz.accelsis.waitara.client.tasks.view.TaskDetailViewMobileAndTablet">
+        <when-type-is class="biz.accelsis.waitara.client.tasks.view.TaskDetailView" />
+        <when-property-is name="formfactor" value="tablet" />
+    </replace-with>
+    <replace-with class="biz.accelsis.waitara.client.tasks.view.TaskDetailViewMobileAndTablet">
         <when-type-is class="biz.accelsis.waitara.client.tasks.view.TaskDetailView" />
         <when-property-is name="formfactor" value="mobile" />
     </replace-with>

@@ -3,6 +3,8 @@ package biz.accelsis.waitara.client.resources;
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
 import com.google.gwt.resources.client.ImageResource;
+import com.google.gwt.resources.client.ImageResource.ImageOptions;
+import com.google.gwt.resources.client.ImageResource.RepeatStyle;
 
 //@formatter:off
 public interface Resources extends ClientBundle
@@ -10,6 +12,7 @@ public interface Resources extends ClientBundle
     // ----------------------------------------------------------------- images
 
     ImageResource logo();
+    @ImageOptions(repeatStyle = RepeatStyle.Horizontal)
     ImageResource header();
 
 
@@ -26,15 +29,11 @@ public interface Resources extends ClientBundle
     }
 
 
-    @Source("tablet.css")
-    CssResource tablet();
+    @Source("mobileAndTablet.css")
+    MobileAndTabletResource mobileAndTablet();
 
 
-    @Source("mobile.css")
-    MobileResource mobile();
-
-
-    public interface MobileResource extends CssResource
+    public interface MobileAndTabletResource extends CssResource
     {
         @ClassName("hidden")
         String hidden();

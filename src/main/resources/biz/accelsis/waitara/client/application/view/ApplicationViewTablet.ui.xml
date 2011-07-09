@@ -2,68 +2,16 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"
     xmlns:waitara="urn:import:biz.accelsis.waitara.client.tasks.view.ui">
 
-    <ui:with field="nameTokens" type="biz.accelsis.waitara.client.NameTokens" />
-    <ui:style>
-        ul.taskList {
-            display: block;
-            left: 0;
-            margin: 0;
-            min-height: 418px;
-            padding: 0;
-            position: absolute;
-            top: 41px;
-            width: 100%;
-        }
-        
-        @sprite ul.taskList>li {
-            background-color: white;
-            background-position: right center;
-            border-bottom: 1px solid #E0E0E0;
-            font-size: 20px;
-            font-weight: bold;
-            gwt-image: "arrow";
-            height: auto;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            -webkit-tap-highlight-color: cornflowerblue;
-        }
-        
-        ul.taskList>li>a {
-            color: inherit;
-            cursor: pointer;
-            display: block;
-            padding: 8px 32px 8px 8px;
-            text-decoration: none;
-        }
-        
-        .emptyMessage {
-            padding: 10px;
-            font-size: 28pt;
-        }
-    </ui:style>
-
     <g:DockLayoutPanel unit="PX">
         <g:north size="41">
             <g:HTMLPanel>
                 <header>
-                    <h1>Waitara Task Management - TABLET</h1>
+                    <h1 ui:field="header">Waitara Task Management</h1>
                 </header>
             </g:HTMLPanel>
         </g:north>
         <g:center>
-            <g:DockLayoutPanel unit="PCT">
-                <g:west size="30">
-                    <waitara:TaskListWidget ui:field="taskList" addStyleNames="{style.taskList}" />
-                </g:west>
-                <g:center>
-                    <g:SimpleLayoutPanel ui:field="mainPanel">
-                        <g:HTML ui:field="emptyMessage" addStyleNames="{style.emptyMessage}">
-                            &laquo; Select a task from the list</g:HTML>
-                    </g:SimpleLayoutPanel>
-                </g:center>
-            </g:DockLayoutPanel>
+            <g:SimpleLayoutPanel ui:field="mainPanel"></g:SimpleLayoutPanel>
         </g:center>
     </g:DockLayoutPanel>
 </ui:UiBinder> 
