@@ -2,7 +2,7 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
 
     <ui:with field="nameTokens" type="biz.accelsis.waitara.client.NameTokens" />
-    <ui:image field="toolbar" repeatStyle="Horizontal" src="../../resources/toolbar.png" />
+    <ui:image field="headerBackground" repeatStyle="Horizontal" src="../../resources/header.png" />
     <ui:style>
         @sprite .toolbar {
             border-bottom: 1px solid #666;
@@ -11,7 +11,7 @@
             display: block;
             font-size: 20px;
             font-weight: bold;
-            gwt-image: "toolbar";
+            gwt-image: "headerBackground";
             height: auto;
             line-height: 20px;
             margin: 0;

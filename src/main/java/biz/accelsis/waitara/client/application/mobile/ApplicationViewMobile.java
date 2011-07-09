@@ -1,5 +1,7 @@
 package biz.accelsis.waitara.client.application.mobile;
 
+import java.util.List;
+
 import biz.accelsis.waitara.client.application.AbstractApplicationView;
 import biz.accelsis.waitara.client.resources.Resources;
 import biz.accelsis.waitara.client.tasks.model.Task;
@@ -37,11 +39,11 @@ public class ApplicationViewMobile extends AbstractApplicationView
 
 
     @Override
-    public void taskList()
+    public void taskList(List<Task> tasks)
     {
         header.setInnerText("Waitara Task Management");
-        tasks.removeStyleName(resources.mobile().visible());
-        tasks.addStyleName(resources.mobile().hidden());
+        this.tasks.removeStyleName(resources.mobile().visible());
+        this.tasks.addStyleName(resources.mobile().hidden());
     }
 
 

@@ -10,6 +10,7 @@ public interface Resources extends ClientBundle
     // ----------------------------------------------------------------- images
 
     ImageResource logo();
+    ImageResource header();
 
 
     // -------------------------------------------------------------------- CSS

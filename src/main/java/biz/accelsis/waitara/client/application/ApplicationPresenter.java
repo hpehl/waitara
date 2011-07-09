@@ -1,11 +1,15 @@
 package biz.accelsis.waitara.client.application;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import biz.accelsis.waitara.client.NameTokens;
 import biz.accelsis.waitara.client.tasks.event.TaskAction.Action;
 import biz.accelsis.waitara.client.tasks.event.TaskActionEvent;
 import biz.accelsis.waitara.client.tasks.event.TaskActionEvent.TaskActionHandler;
+import biz.accelsis.waitara.client.tasks.model.Task;
+import biz.accelsis.waitara.client.tasks.model.TaskStore;
 
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.event.shared.GwtEvent.Type;
@@ -30,14 +34,16 @@ public class ApplicationPresenter extends Presenter<ApplicationView, Application
     public static final Type<RevealContentHandler<?>> TYPE_SetMainContent = new Type<RevealContentHandler<?>>();
 
     private final PlaceManager placeManager;
+    private final TaskStore taskStore;
 
 
     @Inject
     public ApplicationPresenter(final EventBus eventBus, final ApplicationView view, final MyProxy proxy,
-            final PlaceManager placeManager)
+            final PlaceManager placeManager, final TaskStore taskStore)
     {
         super(eventBus, view, proxy);
         this.placeManager = placeManager;
+        this.taskStore = taskStore;
         getEventBus().addHandler(TaskActionEvent.getType(), this);
     }
 
@@ -57,7 +63,8 @@ public class ApplicationPresenter extends Presenter<ApplicationView, Application
         getView().highlight(token);
         if (NameTokens.tasks.equals(token))
         {
-            getView().taskList();
+            List<Task> tasks = taskStore.load();
+            getView().taskList(tasks);
         }
     }
 

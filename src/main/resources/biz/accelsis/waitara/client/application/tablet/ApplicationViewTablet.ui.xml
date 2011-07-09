@@ -1,37 +1,51 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
-<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"
+    xmlns:waitara="urn:import:biz.accelsis.waitara.client.tasks.view.mobile">
 
     <ui:with field="nameTokens" type="biz.accelsis.waitara.client.NameTokens" />
     <ui:style>
-        header {
-            background-color: #3eb0c7;
-            padding: 0px 20px;
-            width: auto;
+        ul.taskList {
+            display: block;
+            left: 0;
+            margin: 0;
+            min-height: 418px;
+            padding: 0;
+            position: absolute;
+            top: 41px;
+            width: 100%;
         }
         
-        header h1 {
-            padding-top: 5px;
-            padding-left: 50px;
-            border-bottom: none;
-        }
-        
-        .roundedWhiteBox {
+        @sprite ul.taskList>li {
             background-color: white;
-            -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
-            border-radius: 5px;
-            box-shadow: 2px 2px 2px #62635e;
-            -moz-box-shadow: 2px 2px 2px #62635e;
-            -webkit-box-shadow: 2px 2px 2px #62635e;
+            background-position: right center;
+            border-bottom: 1px solid #E0E0E0;
+            font-size: 20px;
+            font-weight: bold;
+            gwt-image: "arrow";
+            height: auto;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            -webkit-tap-highlight-color: cornflowerblue;
         }
         
-        .mainPanel {
-            margin: 20px 2px 20px 20px;
+        ul.taskList>li>a {
+            color: inherit;
+            cursor: pointer;
+            display: block;
+            padding: 8px 32px 8px 8px;
+            text-decoration: none;
+        }
+        
+        .emptyMessage {
+            padding: 10px;
+            font-size: 28pt;
         }
     </ui:style>
 
     <g:DockLayoutPanel unit="PX">
-        <g:north size="48">
+        <g:north size="41">
             <g:HTMLPanel>
                 <header>
                     <h1>Waitara Task Management - TABLET</h1>
@@ -39,7 +53,17 @@
             </g:HTMLPanel>
         </g:north>
         <g:center>
-            <g:ScrollPanel ui:field="mainPanel" addStyleNames="{style.mainPanel} {style.roundedWhiteBox}"></g:ScrollPanel>
+            <g:DockLayoutPanel unit="PCT">
+                <g:west size="30">
+                    <waitara:TaskList ui:field="taskList" addStyleNames="{style.taskList}" />
+                </g:west>
+                <g:center>
+                    <g:SimpleLayoutPanel ui:field="mainPanel">
+                        <g:HTML ui:field="emptyMessage" addStyleNames="{style.emptyMessage}">
+                            &laquo; Select a task from the list</g:HTML>
+                    </g:SimpleLayoutPanel>
+                </g:center>
+            </g:DockLayoutPanel>
         </g:center>
     </g:DockLayoutPanel>
 </ui:UiBinder> 

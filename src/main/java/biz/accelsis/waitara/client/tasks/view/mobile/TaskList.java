@@ -45,7 +45,7 @@ public class TaskList extends Widget implements TaskActionEvent.HasTaskActionHan
     }
 
 
-    void update(List<Task> tasks)
+    public void update(List<Task> tasks)
     {
         links.clear();
         while (ul.hasChildNodes())

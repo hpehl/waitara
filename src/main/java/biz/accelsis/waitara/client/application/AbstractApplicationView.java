@@ -1,5 +1,7 @@
 package biz.accelsis.waitara.client.application;
 
+import java.util.List;
+
 import biz.accelsis.waitara.client.Waitara;
 import biz.accelsis.waitara.client.resources.Resources;
 import biz.accelsis.waitara.client.tasks.model.Task;
@@ -46,7 +48,7 @@ public abstract class AbstractApplicationView extends ViewImpl implements Applic
 
 
     @Override
-    public void taskList()
+    public void taskList(List<Task> tasks)
     {
         // default implemmentation does nothing
     }
