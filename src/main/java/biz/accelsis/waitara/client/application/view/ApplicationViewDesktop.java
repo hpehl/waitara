@@ -1,6 +1,5 @@
-package biz.accelsis.waitara.client.application.desktop;
+package biz.accelsis.waitara.client.application.view;
 
-import biz.accelsis.waitara.client.application.AbstractApplicationView;
 import biz.accelsis.waitara.client.resources.Resources;
 
 import com.google.gwt.core.client.GWT;

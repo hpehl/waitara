@@ -1,13 +1,13 @@
 package biz.accelsis.waitara.client.gin;
 
 import biz.accelsis.waitara.client.about.AboutPresenter;
-import biz.accelsis.waitara.client.application.ApplicationPresenter;
+import biz.accelsis.waitara.client.application.presenter.ApplicationPresenter;
 import biz.accelsis.waitara.client.help.HelpPresenter;
 import biz.accelsis.waitara.client.resources.Resources;
 import biz.accelsis.waitara.client.settings.SettingsPresenter;
 import biz.accelsis.waitara.client.tasks.presenter.TaskDetailPresenter;
 import biz.accelsis.waitara.client.tasks.presenter.TaskListPresenter;
-import biz.accelsis.waitara.client.tasks.view.desktop.TasksTableResources;
+import biz.accelsis.waitara.client.tasks.view.ui.TaskCellTableResources;
 
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.inject.client.AsyncProvider;
@@ -25,7 +25,7 @@ public interface WaitaraGinjector extends Ginjector
     EventBus getEventBus();
     PlaceManager getPlaceManager();
     Resources getResources();
-    TasksTableResources getTasksTableResources();
+    TaskCellTableResources getTasksTableResources();
 
     // ------------------------------------------------------- presenters (a-z)
 

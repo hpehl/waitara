@@ -1,10 +1,11 @@
-package biz.accelsis.waitara.client.application;
+package biz.accelsis.waitara.client.application.presenter;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
 import biz.accelsis.waitara.client.NameTokens;
+import biz.accelsis.waitara.client.application.view.ApplicationView;
 import biz.accelsis.waitara.client.tasks.event.TaskAction.Action;
 import biz.accelsis.waitara.client.tasks.event.TaskActionEvent;
 import biz.accelsis.waitara.client.tasks.event.TaskActionEvent.TaskActionHandler;

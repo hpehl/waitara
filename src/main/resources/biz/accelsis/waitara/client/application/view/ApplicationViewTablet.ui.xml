@@ -1,6 +1,6 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"
-    xmlns:waitara="urn:import:biz.accelsis.waitara.client.tasks.view.mobile">
+    xmlns:waitara="urn:import:biz.accelsis.waitara.client.tasks.view.ui">
 
     <ui:with field="nameTokens" type="biz.accelsis.waitara.client.NameTokens" />
     <ui:style>
@@ -55,7 +55,7 @@
         <g:center>
             <g:DockLayoutPanel unit="PCT">
                 <g:west size="30">
-                    <waitara:TaskList ui:field="taskList" addStyleNames="{style.taskList}" />
+                    <waitara:TaskListWidget ui:field="taskList" addStyleNames="{style.taskList}" />
                 </g:west>
                 <g:center>
                     <g:SimpleLayoutPanel ui:field="mainPanel">

@@ -1,8 +1,7 @@
-package biz.accelsis.waitara.client.application.mobile;
+package biz.accelsis.waitara.client.application.view;
 
 import java.util.List;
 
-import biz.accelsis.waitara.client.application.AbstractApplicationView;
 import biz.accelsis.waitara.client.resources.Resources;
 import biz.accelsis.waitara.client.tasks.model.Task;
 

@@ -1,8 +1,9 @@
-package biz.accelsis.waitara.client.application;
+package biz.accelsis.waitara.client.application.view;
 
 import java.util.List;
 
 import biz.accelsis.waitara.client.Waitara;
+import biz.accelsis.waitara.client.application.presenter.ApplicationPresenter;
 import biz.accelsis.waitara.client.resources.Resources;
 import biz.accelsis.waitara.client.tasks.model.Task;
 
@@ -14,9 +15,9 @@ import com.gwtplatform.mvp.client.ViewImpl;
 public abstract class AbstractApplicationView extends ViewImpl implements ApplicationView
 {
     @UiField
-    public Panel mainPanel;
-    protected final Widget widget;
-    protected final Resources resources;
+    Panel mainPanel;
+    final Widget widget;
+    final Resources resources;
 
 
     public AbstractApplicationView()
@@ -27,10 +28,10 @@ public abstract class AbstractApplicationView extends ViewImpl implements Applic
     }
 
 
-    protected abstract void injectCss(Resources resources);
+    abstract void injectCss(Resources resources);
 
 
-    protected abstract Widget initUi();
+    abstract Widget initUi();
 
 
     @Override

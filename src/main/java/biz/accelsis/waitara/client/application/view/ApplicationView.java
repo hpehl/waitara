@@ -1,4 +1,4 @@
-package biz.accelsis.waitara.client.application;
+package biz.accelsis.waitara.client.application.view;
 
 import java.util.List;
 

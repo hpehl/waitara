@@ -1,9 +1,8 @@
-package biz.accelsis.waitara.client.tasks.view.desktop;
+package biz.accelsis.waitara.client.tasks.view;
 
 import javax.inject.Inject;
 
 import biz.accelsis.waitara.client.tasks.model.Task;
-import biz.accelsis.waitara.client.tasks.view.TaskDetailView;
 import biz.accelsis.waitara.client.ui.FormatUtils;
 
 import com.google.gwt.core.client.GWT;

@@ -1,4 +1,4 @@
-package biz.accelsis.waitara.client.tasks.view.desktop;
+package biz.accelsis.waitara.client.tasks.view.ui;
 
 import static com.google.gwt.user.cellview.client.HasKeyboardSelectionPolicy.KeyboardSelectionPolicy.DISABLED;
 
@@ -8,6 +8,7 @@ import biz.accelsis.waitara.client.tasks.event.TaskAction;
 import biz.accelsis.waitara.client.tasks.event.TaskActionEvent;
 import biz.accelsis.waitara.client.tasks.event.TaskActionEvent.TaskActionHandler;
 import biz.accelsis.waitara.client.tasks.model.Task;
+import biz.accelsis.waitara.client.tasks.model.TaskKeyProvider;
 import biz.accelsis.waitara.client.ui.FormatUtils;
 
 import com.google.gwt.event.shared.HandlerRegistration;
@@ -15,16 +16,16 @@ import com.google.gwt.safehtml.shared.SafeHtml;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.google.gwt.user.cellview.client.CellTable;
 
-public class TaskTable extends CellTable<Task> implements TaskActionEvent.HasTaskActionHandlers
+public class TaskCellTable extends CellTable<Task> implements TaskActionEvent.HasTaskActionHandlers
 {
     // -------------------------------------------------------- private members
 
-    private final TasksTableResources resources;
+    private final TaskCellTableResources resources;
 
 
     // ----------------------------------------------------------- constructors
 
-    public TaskTable(final TasksTableResources resources)
+    public TaskCellTable(final TaskCellTableResources resources)
     {
         super(Integer.MAX_VALUE, resources, new TaskKeyProvider());
         this.resources = resources;
@@ -90,7 +91,7 @@ public class TaskTable extends CellTable<Task> implements TaskActionEvent.HasTas
     }
 
 
-    void update(List<Task> tasks)
+    public void update(List<Task> tasks)
     {
         if (tasks != null)
         {

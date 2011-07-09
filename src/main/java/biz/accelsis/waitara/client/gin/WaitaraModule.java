@@ -4,7 +4,7 @@ import biz.accelsis.waitara.client.NameTokens;
 import biz.accelsis.waitara.client.WaitaraPlaceManager;
 import biz.accelsis.waitara.client.about.AboutPresenter;
 import biz.accelsis.waitara.client.about.AboutView;
-import biz.accelsis.waitara.client.application.ApplicationPresenter;
+import biz.accelsis.waitara.client.application.presenter.ApplicationPresenter;
 import biz.accelsis.waitara.client.help.HelpPresenter;
 import biz.accelsis.waitara.client.help.HelpView;
 import biz.accelsis.waitara.client.resources.Resources;

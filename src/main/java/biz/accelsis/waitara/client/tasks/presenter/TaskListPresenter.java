@@ -5,7 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import biz.accelsis.waitara.client.NameTokens;
-import biz.accelsis.waitara.client.application.ApplicationPresenter;
+import biz.accelsis.waitara.client.application.presenter.ApplicationPresenter;
 import biz.accelsis.waitara.client.tasks.model.Task;
 import biz.accelsis.waitara.client.tasks.model.TaskStore;
 import biz.accelsis.waitara.client.tasks.view.TaskListView;

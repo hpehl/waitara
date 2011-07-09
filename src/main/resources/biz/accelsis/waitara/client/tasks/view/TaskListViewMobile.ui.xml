@@ -1,8 +1,8 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"
-    xmlns:waitara="urn:import:biz.accelsis.waitara.client.tasks.view.mobile">
+    xmlns:waitara="urn:import:biz.accelsis.waitara.client.tasks.view.ui">
 
-    <ui:image field="arrow" src="../../../resources/arrow.png" />
+    <ui:image field="arrow" src="../../resources/arrow.png" />
     <ui:style>
         ul.tasks {
             display: block;
@@ -41,7 +41,7 @@
 
     <g:HTMLPanel>
         <!-- Creates an ul with one li per task -->
-        <waitara:TaskList ui:field="tasks" addStyleNames="{style.tasks}" />
+        <waitara:TaskListWidget ui:field="tasks" addStyleNames="{style.tasks}" />
     </g:HTMLPanel>
 
 </ui:UiBinder> 

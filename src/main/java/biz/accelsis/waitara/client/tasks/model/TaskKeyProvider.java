@@ -1,10 +1,8 @@
-package biz.accelsis.waitara.client.tasks.view.desktop;
-
-import biz.accelsis.waitara.client.tasks.model.Task;
+package biz.accelsis.waitara.client.tasks.model;
 
 import com.google.gwt.view.client.ProvidesKey;
 
-class TaskKeyProvider implements ProvidesKey<Task>
+public class TaskKeyProvider implements ProvidesKey<Task>
 {
     @Override
     public Object getKey(Task item)

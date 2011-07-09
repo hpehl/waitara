@@ -1,4 +1,4 @@
-package biz.accelsis.waitara.client.tasks.view.mobile;
+package biz.accelsis.waitara.client.tasks.view.ui;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,14 +21,14 @@ import com.google.gwt.user.client.Element;
 import com.google.gwt.user.client.Event;
 import com.google.gwt.user.client.ui.Widget;
 
-public class TaskList extends Widget implements TaskActionEvent.HasTaskActionHandlers
+public class TaskListWidget extends Widget implements TaskActionEvent.HasTaskActionHandlers
 {
     private final UListElement ul;
     private final EventBus eventBus;
     private final Map<AnchorElement, Task> links;
 
 
-    public TaskList()
+    public TaskListWidget()
     {
         ul = Document.get().createULElement();
         eventBus = Waitara.ginjector.getEventBus();

@@ -3,7 +3,7 @@ package biz.accelsis.waitara.client.about;
 import javax.inject.Inject;
 
 import biz.accelsis.waitara.client.NameTokens;
-import biz.accelsis.waitara.client.application.ApplicationPresenter;
+import biz.accelsis.waitara.client.application.presenter.ApplicationPresenter;
 
 import com.google.gwt.event.shared.EventBus;
 import com.gwtplatform.mvp.client.Presenter;
