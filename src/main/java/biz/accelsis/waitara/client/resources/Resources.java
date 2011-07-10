@@ -22,19 +22,26 @@ public interface Resources extends ClientBundle
     @Source("desktop.css")
     DesktopResource desktop();
 
-    
     public interface DesktopResource extends CssResource
     {
-        @ClassName("selectedNavigationEntry")
-        String selectedNavigationEntry();
+        @ClassName("selected")
+        String selected();
     }
 
 
-    @Source("mobileAndTablet.css")
-    MobileAndTabletResource mobileAndTablet();
+    @Source("tablet.css")
+    TabletResource tablet();
+
+    public interface TabletResource extends CssResource
+    {
+    }
+
+    
+    @Source("mobile.css")
+    MobileResource mobile();
 
 
-    public interface MobileAndTabletResource extends CssResource
+    public interface MobileResource extends CssResource
     {
         @ClassName("hidden")
         String hidden();

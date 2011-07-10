@@ -1,5 +1,6 @@
 package biz.accelsis.waitara.client.tasks.view.ui;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,14 +26,16 @@ public class TaskListWidget extends Widget implements TaskActionEvent.HasTaskAct
 {
     private final UListElement ul;
     private final EventBus eventBus;
+    private final List<LIElement> lis;
     private final Map<AnchorElement, Task> links;
 
 
     public TaskListWidget()
     {
-        ul = Document.get().createULElement();
-        eventBus = Waitara.ginjector.getEventBus();
-        links = new HashMap<AnchorElement, Task>();
+        this.ul = Document.get().createULElement();
+        this.eventBus = Waitara.ginjector.getEventBus();
+        this.lis = new ArrayList<LIElement>();
+        this.links = new HashMap<AnchorElement, Task>();
         setElement(ul);
         setStyleName("waitara-tasklist");
     }
@@ -63,6 +66,7 @@ public class TaskListWidget extends Widget implements TaskActionEvent.HasTaskAct
                 DOM.setEventListener((Element) a.cast(), this);
                 links.put(a, task);
                 li.appendChild(a);
+                lis.add(li);
                 ul.appendChild(li);
             }
         }
@@ -84,6 +88,22 @@ public class TaskListWidget extends Widget implements TaskActionEvent.HasTaskAct
                 {
                     TaskActionEvent.fire(this, task, TaskAction.Action.DETAIL);
                     eventBus.fireEvent(new TaskActionEvent(task, TaskAction.Action.DETAIL));
+                    com.google.gwt.dom.client.Element parentElement = a.getParentElement();
+                    if (parentElement.getNodeName().equalsIgnoreCase("li"))
+                    {
+                        LIElement selectedLi = parentElement.cast();
+                        for (LIElement li : lis)
+                        {
+                            if (li == selectedLi)
+                            {
+                                li.setAttribute("selected", "true");
+                            }
+                            else
+                            {
+                                li.removeAttribute("selected");
+                            }
+                        }
+                    }
                 }
             }
         }

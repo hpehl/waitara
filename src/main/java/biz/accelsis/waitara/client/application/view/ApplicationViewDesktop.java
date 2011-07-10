@@ -56,11 +56,11 @@ public class ApplicationViewDesktop extends AbstractApplicationView
                 {
                     if (token.equals(link.getTargetHistoryToken()))
                     {
-                        link.addStyleName(resources.desktop().selectedNavigationEntry());
+                        link.addStyleName(resources.desktop().selected());
                     }
                     else
                     {
-                        link.removeStyleName(resources.desktop().selectedNavigationEntry());
+                        link.removeStyleName(resources.desktop().selected());
                     }
                 }
             }

@@ -23,7 +23,7 @@ public class ApplicationViewTablet extends AbstractApplicationView
     @Override
     protected void injectCss(Resources resources)
     {
-        resources.mobileAndTablet().ensureInjected();
+        resources.tablet().ensureInjected();
     }
 
 

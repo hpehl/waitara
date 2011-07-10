@@ -25,7 +25,7 @@ public class ApplicationViewMobile extends AbstractApplicationView
     @Override
     protected void injectCss(Resources resources)
     {
-        resources.mobileAndTablet().ensureInjected();
+        resources.mobile().ensureInjected();
 
     }
 
@@ -41,8 +41,8 @@ public class ApplicationViewMobile extends AbstractApplicationView
     public void taskList(List<Task> tasks)
     {
         header.setInnerText("Waitara Task Management");
-        backToTaskList.removeStyleName(resources.mobileAndTablet().visible());
-        backToTaskList.addStyleName(resources.mobileAndTablet().hidden());
+        backToTaskList.removeStyleName(resources.mobile().visible());
+        backToTaskList.addStyleName(resources.mobile().hidden());
     }
 
 
@@ -50,7 +50,7 @@ public class ApplicationViewMobile extends AbstractApplicationView
     public void taskDetail(Task task)
     {
         header.setInnerText(task.getName());
-        backToTaskList.removeStyleName(resources.mobileAndTablet().hidden());
-        backToTaskList.addStyleName(resources.mobileAndTablet().visible());
+        backToTaskList.removeStyleName(resources.mobile().hidden());
+        backToTaskList.addStyleName(resources.mobile().visible());
     }
 }

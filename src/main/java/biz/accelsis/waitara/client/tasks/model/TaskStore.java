@@ -10,6 +10,7 @@ public class TaskStore
 {
     final static String TASKS_KEY = "biz.accelsis.waitara.client.tasks";
 
+    private List<Task> cache;
     private final TaskReader reader;
     private final TaskWriter writer;
     private final TaskFactory factory;
@@ -37,6 +38,11 @@ public class TaskStore
 
     public List<Task> load()
     {
+        if (cache != null)
+        {
+            return cache;
+        }
+
         List<Task> tasks = null;
         if (storage != null)
         {
@@ -51,6 +57,7 @@ public class TaskStore
             tasks = factory.sampleTasks();
             save(tasks);
         }
+        cache = tasks;
         return tasks;
     }
 }
