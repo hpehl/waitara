@@ -11,6 +11,7 @@ public interface Resources extends ClientBundle
 {
     // ----------------------------------------------------------------- images
 
+    ImageResource arrow();
     ImageResource logo();
     @ImageOptions(repeatStyle = RepeatStyle.Horizontal)
     ImageResource header();

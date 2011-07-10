@@ -2,46 +2,35 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"
     xmlns:waitara="urn:import:biz.accelsis.waitara.client.tasks.view.ui">
 
-    <ui:image field="arrow" src="../../resources/arrow.png" />
     <ui:style>
-        ul.tasks {
-            display: block;
-            left: 0;
-            margin: 0;
-            min-height: 418px;
-            padding: 0;
-            position: absolute;
-            top: 41px;
-            width: 100%;
-        }
-        
-        @sprite ul.tasks>li {
+        div.details>ul {
             background-color: white;
-            background-position: right center;
-            border-bottom: 1px solid #E0E0E0;
-            font-size: 20px;
-            font-weight: bold;
-            gwt-image: "arrow";
-            height: auto;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            -webkit-tap-highlight-color: cornflowerblue;
+            border: 1px solid #D9D9D9;
+            margin: 10px;
+            padding: 0px;
+            -webkit-border-radius: 8px;
         }
         
-        ul.tasks>li>a {
-            color: inherit;
-            cursor: pointer;
-            display: block;
-            padding: 8px 32px 8px 8px;
-            text-decoration: none;
+        div.details>ul>li {
+            color: black;
+            border-bottom: 1px #D9D9D9 solid;
+            list-style-type: none;
+            padding: 10px;
         }
     </ui:style>
 
-    <g:HTMLPanel>
-        <!-- Creates an ul with one li per task -->
-        <waitara:TaskListWidget ui:field="tasks" addStyleNames="{style.tasks}" />
-    </g:HTMLPanel>
-
+    <g:DockLayoutPanel unit="PCT">
+        <g:west size="30">
+            <waitara:TaskListWidget ui:field="tasks" />
+        </g:west>
+        <g:center>
+            <g:HTMLPanel addStyleNames="{style.details}">
+                <ul>
+                    <li ui:field="description">Please select</li>
+                    <li ui:field="dueDate">task from</li>
+                    <li ui:field="finished">list</li>
+                </ul>
+            </g:HTMLPanel>
+        </g:center>
+    </g:DockLayoutPanel>
 </ui:UiBinder> 

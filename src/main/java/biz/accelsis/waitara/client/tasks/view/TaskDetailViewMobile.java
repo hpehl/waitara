@@ -11,10 +11,10 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Widget;
 
-public class TaskDetailViewMobileAndTablet extends AbstractTaskDetailView
+public class TaskDetailViewMobile extends AbstractTaskDetailView
 {
     // @formatter:off
-    interface TaskDetailUi extends UiBinder<Widget, TaskDetailViewMobileAndTablet> {}
+    interface TaskDetailUi extends UiBinder<Widget, TaskDetailViewMobile> {}
     private static TaskDetailUi uiBinder = GWT.create(TaskDetailUi.class);
 
     @UiField LIElement description;

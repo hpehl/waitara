@@ -4,41 +4,16 @@
 
     <ui:image field="arrow" src="../../resources/arrow.png" />
     <ui:style>
-        ul.tasks {
-            display: block;
-            margin: 0;
-            min-height: 418px;
-            padding: 0;
-            width: 100%;
-        }
-        
-        @sprite ul.tasks>li {
-            background-color: white;
-            background-position: right center;
-            border-bottom: 1px solid #E0E0E0;
-            font-size: 20px;
-            font-weight: bold;
+        .arrow {
             gwt-image: "arrow";
             height: auto;
-            list-style: none;
-            margin: 0;
-            padding: 0;
             width: 100%;
-            -webkit-tap-highlight-color: cornflowerblue;
-        }
-        
-        ul.tasks>li>a {
-            color: inherit;
-            cursor: pointer;
-            display: block;
-            padding: 8px 32px 8px 8px;
-            text-decoration: none;
         }
     </ui:style>
 
     <g:HTMLPanel>
         <!-- Creates an ul with one li per task -->
-        <waitara:TaskListWidget ui:field="tasks" addStyleNames="{style.tasks}" />
+        <waitara:TaskListWidget ui:field="tasks" />
     </g:HTMLPanel>
 
 </ui:UiBinder> 

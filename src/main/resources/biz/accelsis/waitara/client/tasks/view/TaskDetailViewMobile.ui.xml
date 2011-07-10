@@ -2,9 +2,6 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
 
     <ui:style>
-        div.details {
-        }
-        
         div.details>ul {
             background-color: white;
             border: 1px solid #D9D9D9;
