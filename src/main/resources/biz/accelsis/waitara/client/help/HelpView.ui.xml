@@ -16,7 +16,7 @@
         <p>
             Waitara is a simple task management. As it is just a demo for an article in
             <a href="http://www.sigs-datacom.de/fachzeitschriften/javaspektrum.html">JavaSPEKTRUM</a>
-            it's only read-only. Currently no new tasks can be created nor existing tasks can be edited or deleted.
+            it's read-only. Currently no new tasks can be created nor existing tasks can be edited or deleted.
         </p>
     </g:HTML>
 
