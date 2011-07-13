@@ -9,15 +9,47 @@
         a:hover {
             color: #1F6B75;
         }
+        
+        ul.about {
+            list-style-type: circle;
+        }
+        
+        ul.about>li {
+            padding-left: 20px;
+        }
     </ui:style>
 
     <g:HTML>
         <h1>About</h1>
         <p>
-            Waitara (<a href="http://www.maoridictionary.co.nz/index.cfm?dictionaryKeywords=task">Maori for "Task"</a>) is a demo task manager 
-            for an article in <a href="http://www.sigs-datacom.de/fachzeitschriften/javaspektrum.html">JavaSPEKTRUM</a> written 
-            by <a href="http://harald.pehl.name">Harald Pehl</a>.
+            Waitara (
+            <a href="http://www.maoridictionary.co.nz/index.cfm?dictionaryKeywords=task">Maori for "Task"</a>
+            ) is a demo task manager
+            for an article in
+            <a href="http://www.sigs-datacom.de/fachzeitschriften/javaspektrum.html">JavaSPEKTRUM</a>
+            written by
+            <a href="http://harald.pehl.name">Harald Pehl</a>
+            .
         </p>
+        <p>
+            Waitara uses the following tools and libraries:
+        </p>
+        <ul class="{style.about}">
+            <li>
+                <a href="http://code.google.com/intl/de-DE/webtoolkit/overview.html">GWT</a>
+            </li>
+            <li>
+                <a href="http://code.google.com/p/gwt-platform/">GWTP</a>
+            </li>
+            <li>
+                <a href="http://code.google.com/p/google-gin/">GIN</a>
+            </li>
+            <li>
+                <a href="http://code.google.com/p/piriti">Piriti</a>
+            </li>
+        </ul>
+        <p>Through the use of MVP Waitara supports different platforms (desktop, tablet and smartphones). In this
+            context as much code as possible is reused and as little code as needed is written per platform.</p>
     </g:HTML>
 
 </ui:UiBinder> 
