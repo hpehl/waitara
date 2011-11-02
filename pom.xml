@@ -52,8 +52,8 @@
 
 	<properties>
 		<!-- GWT -->
-		<gwt.version>2.3.0</gwt.version>
-		<gwt.plugin.version>2.3.0</gwt.plugin.version>
+		<gwt.version>2.4.0</gwt.version>
+		<gwt.plugin.version>2.4.0</gwt.plugin.version>
 		<gwtp.version>0.6</gwtp.version>
 		<piriti.version>0.7b3</piriti.version>
 		<totoe.version>0.2.4</totoe.version>
